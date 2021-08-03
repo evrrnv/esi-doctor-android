@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">EsiProject</string>
+    <string name="illustration">Illustration</string>
+    <string name="heading">Welcome To Our\nPlatform</string>
+    <string name="sub_heading">ESI-SBA\'s only online platform that let you interact with the schools doctor</string>
+    <string name="sign_in">Sign In</string>
 </resources>

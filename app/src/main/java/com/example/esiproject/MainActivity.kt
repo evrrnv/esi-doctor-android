@@ -21,8 +21,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        appAuthManager = AppAuthManager(this)
-        doAuthorization(appAuthManager.authRequest)
+//        appAuthManager = AppAuthManager(this)
+//        doAuthorization(appAuthManager.authRequest)
     }
 
     private var resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
