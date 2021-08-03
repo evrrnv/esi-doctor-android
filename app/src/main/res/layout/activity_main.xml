@@ -58,9 +58,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
             android:backgroundTint="?colorPrimary"
-            android:padding="10dp"
+            android:padding="15dp"
             android:text="@string/sign_in"
-            app:cornerRadius="8dp"
+            android:textAllCaps="false"
+            app:cornerRadius="12dp"
             app:layout_constraintBottom_toTopOf="@+id/bottomGuideLine"
             app:layout_constraintEnd_toStartOf="@+id/rightGuideLine"
             app:layout_constraintStart_toStartOf="@+id/leftGuideLine"
@@ -71,14 +72,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_begin="20dp" />
+            app:layout_constraintGuide_begin="50dp" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/rightGuideLine"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_end="20dp" />
+            app:layout_constraintGuide_end="50dp" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/topGuideLine"

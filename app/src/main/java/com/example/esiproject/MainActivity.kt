@@ -19,7 +19,10 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setTheme(R.style.Theme_EsiProject)
         setContentView(R.layout.activity_main)
+
+        supportActionBar?.hide()
 
 //        appAuthManager = AppAuthManager(this)
 //        doAuthorization(appAuthManager.authRequest)
