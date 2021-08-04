@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    tools:context=".MainActivity" >
+    tools:context=".ui.main.LoginActivity" >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -29,11 +29,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
+            android:fontFamily="@font/poppins_bold"
             android:gravity="center"
             android:text="@string/heading"
-            android:textColor="?colorOnSecondary"
+            android:textColor="#2B2B2B"
             android:textSize="30sp"
-            android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/subHeading"
             app:layout_constraintEnd_toStartOf="@+id/rightGuideLine"
             app:layout_constraintStart_toStartOf="@+id/leftGuideLine"
@@ -43,7 +43,7 @@
             android:id="@+id/subHeading"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="5dp"
             android:gravity="center"
             android:text="@string/sub_heading"
             android:textSize="16sp"
@@ -58,6 +58,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
             android:backgroundTint="?colorPrimary"
+            android:fontFamily="@font/poppins_bold"
             android:padding="15dp"
             android:text="@string/sign_in"
             android:textAllCaps="false"

@@ -12,10 +12,15 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="android:textViewStyle">@style/PoppinsRegular</item>
     </style>
 
     <style name="SplashScreenTheme" parent = "Theme.MaterialComponents.DayNight.DarkActionBar">
         <item name="android:windowBackground">@drawable/splash_image</item>
         <item name="android:statusBarColor">@color/purple_700</item>
+    </style>
+
+    <style name="PoppinsRegular" parent="Widget.MaterialComponents.TextView">
+        <item name="android:fontFamily">@font/poppins_regular</item>
     </style>
 </resources>

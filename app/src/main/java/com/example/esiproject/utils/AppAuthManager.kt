@@ -4,6 +4,8 @@ import android.content.Context
 import android.net.Uri
 import android.util.Log
 import net.openid.appauth.*
+import kotlin.coroutines.resume
+import kotlin.coroutines.suspendCoroutine
 
 class AppAuthManager (context: Context) {
 
@@ -16,7 +18,7 @@ class AppAuthManager (context: Context) {
 
     private val authStateManager: AuthStateManager = AuthStateManager(context)
     private val authService: AuthorizationService
-    val authRequest: AuthorizationRequest
+    private val authRequest: AuthorizationRequest
 
     init {
         if (authStateManager.authState!!.authorizationServiceConfiguration == null) {
@@ -35,8 +37,8 @@ class AppAuthManager (context: Context) {
         authRequest = authRequestBuilder.build()
         authService = AuthorizationService(context)
     }
-    fun checkAuthorization(response: AuthorizationResponse?, exception: AuthorizationException?) {
-        if (isAuthorized()) {
+    suspend fun checkAuthorization(response: AuthorizationResponse?, exception: AuthorizationException?): Result<String> {
+        return if (isAuthorized()) {
             Log.i(tag, "Already authorized.")
             startRefreshAccessToken()
         } else {
@@ -45,57 +47,66 @@ class AppAuthManager (context: Context) {
         }
     }
 
-    private fun startRefreshAccessToken() {
-        authService.performTokenRequest(
-            authStateManager.authState!!.createTokenRefreshRequest()
-        ) { tokenResponse, authException ->
-            handleCodeExchangeResponse(tokenResponse, authException)
+    private suspend fun startRefreshAccessToken(): Result<String> {
+        return suspendCoroutine {cont ->
+            authService.performTokenRequest(
+                authStateManager.authState!!.createTokenRefreshRequest()
+            ) { tokenResponse, authException ->
+                handleCodeExchangeResponse(tokenResponse, authException)
+                cont.resume(Result.success(getAccessToken()!!))
+            }
         }
     }
 
-    private fun startAuthCodeExchange(response: AuthorizationResponse?, exception: AuthorizationException?) {
+    private suspend fun startAuthCodeExchange(response: AuthorizationResponse?, exception: AuthorizationException?): Result<String> {
         if (response != null || exception != null) {
             authStateManager.updateAfterAuthorization(response, exception)
         }
 
-        when {
+        return when {
             response?.authorizationCode != null -> {
                 authStateManager.updateAfterAuthorization(response, exception)
-                exchangeAuthorizationCode(response)
+                return exchangeAuthorizationCode(response)
             }
             exception != null -> {
-                Log.e(tag, "Authorization flow failed: " + exception.message)
+                Result.failure(Exception("Authorization flow failed: " + exception.message))
             }
             else -> {
-                Log.e(tag, "No authorization state retained - reauthorization required")
+                Result.failure(Exception("Authorization flow failed: " + exception?.message))
             }
         }
     }
 
-    private fun exchangeAuthorizationCode(authorizationResponse: AuthorizationResponse) {
-        authService.performTokenRequest(
+    private suspend fun exchangeAuthorizationCode(authorizationResponse: AuthorizationResponse): Result<String> {
+        return suspendCoroutine { cont ->
+            authService.performTokenRequest(
                 authorizationResponse.createTokenExchangeRequest()
-                ) { tokenResponse, authException ->
-                    handleCodeExchangeResponse(tokenResponse, authException)
-                }
-    }
-
-    private fun handleCodeExchangeResponse(tokenResponse: TokenResponse?, authException: AuthorizationException?) {
-        authStateManager.updateAfterTokenResponse(tokenResponse, authException)
-        Log.i(tag, "IsAuth: " + authStateManager.authState!!.isAuthorized)
-        if (!authStateManager.authState!!.isAuthorized) {
-            Log.e(tag, "failed to exchange authorization code")
-        } else {
-            Log.i(tag, "AccessToken: ${getAccessToken()}")
-            Log.i(tag, "RefreshToken: ${authStateManager.authState?.refreshToken}")
+            ) { tokenResponse, authException ->
+                cont.resume(handleCodeExchangeResponse(tokenResponse, authException))
+            }
         }
     }
 
-    private fun isAuthorized(): Boolean {
+    private fun handleCodeExchangeResponse(tokenResponse: TokenResponse?, authException: AuthorizationException?): Result<String> {
+        authStateManager.updateAfterTokenResponse(tokenResponse, authException)
+        Log.i(tag, "IsAuth: " + authStateManager.authState!!.isAuthorized)
+        return if (!authStateManager.authState!!.isAuthorized) {
+            Result.failure(Exception("failed to exchange authorization code"))
+        } else {
+            Log.i(tag, "RefreshToken: ${authStateManager.authState?.refreshToken}")
+            Result.success(getAccessToken()!!)
+        }
+    }
+
+    fun isAuthorized(): Boolean {
         return authStateManager.authState!!.isAuthorized
     }
 
-    fun getAccessToken(): String? {
+    private fun getAccessToken(): String? {
         return authStateManager.authState?.accessToken
+    }
+
+    fun getAuthRequest(): AuthorizationRequest {
+        return this.authRequest
     }
 }
