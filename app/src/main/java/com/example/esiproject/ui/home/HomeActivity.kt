@@ -2,6 +2,7 @@ package com.example.esiproject.ui.home
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.viewModels
 import com.example.esiproject.R
 import com.example.esiproject.databinding.ActivityHomeBinding

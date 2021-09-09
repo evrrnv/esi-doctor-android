@@ -14,7 +14,7 @@ class AppAuthManager (context: Context) {
     private val authEndpoint = "https://auth.moun3im.com/auth/realms/1sc-project/protocol/openid-connect/auth"
     private val tokenEndpoint = "https://auth.moun3im.com/auth/realms/1sc-project/protocol/openid-connect/token"
     private val redirectUri = Uri.parse("esiproject://oauth2redirect")
-    private val clientId = "mobile"
+    private val clientId = "web"
 
     private val authStateManager: AuthStateManager = AuthStateManager(context)
     private val authService: AuthorizationService
@@ -37,10 +37,15 @@ class AppAuthManager (context: Context) {
         authRequest = authRequestBuilder.build()
         authService = AuthorizationService(context)
     }
+
     suspend fun checkAuthorization(response: AuthorizationResponse?, exception: AuthorizationException?): Result<String> {
         return if (isAuthorized()) {
             Log.i(tag, "Already authorized.")
-            startRefreshAccessToken()
+            if (isAccessTokenExpired()) {
+                startRefreshAccessToken()
+            } else {
+                Result.success(getAccessToken()!!)
+            }
         } else {
             Log.i(tag, "Not yet authorized.")
             startAuthCodeExchange(response, exception)
@@ -52,8 +57,7 @@ class AppAuthManager (context: Context) {
             authService.performTokenRequest(
                 authStateManager.authState!!.createTokenRefreshRequest()
             ) { tokenResponse, authException ->
-                handleCodeExchangeResponse(tokenResponse, authException)
-                cont.resume(Result.success(getAccessToken()!!))
+                cont.resume(handleCodeExchangeResponse(tokenResponse, authException))
             }
         }
     }
@@ -94,12 +98,17 @@ class AppAuthManager (context: Context) {
             Result.failure(Exception("failed to exchange authorization code"))
         } else {
             Log.i(tag, "RefreshToken: ${authStateManager.authState?.refreshToken}")
+            Log.i(tag, "AccessToken: ${getAccessToken()}")
             Result.success(getAccessToken()!!)
         }
     }
 
     fun isAuthorized(): Boolean {
         return authStateManager.authState!!.isAuthorized
+    }
+
+    private fun isAccessTokenExpired(): Boolean {
+        return authStateManager.authState!!.needsTokenRefresh
     }
 
     private fun getAccessToken(): String? {
