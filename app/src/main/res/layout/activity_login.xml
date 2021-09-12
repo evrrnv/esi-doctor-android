@@ -47,13 +47,13 @@
             android:gravity="center"
             android:text="@string/sub_heading"
             android:textSize="16sp"
-            app:layout_constraintBottom_toTopOf="@+id/signInButton"
+            app:layout_constraintBottom_toTopOf="@+id/createRdvButton"
             app:layout_constraintEnd_toStartOf="@+id/rightGuideLine"
             app:layout_constraintStart_toStartOf="@+id/leftGuideLine"
             app:layout_constraintTop_toBottomOf="@+id/heading" />
 
         <Button
-            android:id="@+id/signInButton"
+            android:id="@+id/createRdvButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"

@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_end="723dp" />
+        app:layout_constraintGuide_begin="90dp" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="0dp"
@@ -34,7 +34,8 @@
             app:layout_constraintBottom_toTopOf="@+id/view"
             app:layout_constraintEnd_toStartOf="@+id/rightGuideLine"
             app:layout_constraintStart_toStartOf="@+id/leftGuideLine"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="spread" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/leftGuideLine"
@@ -90,8 +91,8 @@
             android:id="@+id/minutes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:width="100dp"
-            android:height="100dp"
+            android:width="85dp"
+            android:height="85dp"
             android:background="@drawable/circle_background"
             android:gravity="center"
             android:padding="8dp"
@@ -106,8 +107,8 @@
             android:id="@+id/hours"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:width="100dp"
-            android:height="100dp"
+            android:width="85dp"
+            android:height="85dp"
             android:background="@drawable/circle_background"
             android:gravity="center"
             android:padding="8dp"
@@ -122,8 +123,8 @@
             android:id="@+id/jours"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:width="100dp"
-            android:height="100dp"
+            android:width="85dp"
+            android:height="85dp"
             android:background="@drawable/circle_background"
             android:gravity="center"
             android:padding="8dp"
@@ -297,7 +298,7 @@
             android:background="@drawable/corners"
             android:backgroundTint="#24A9E2"
             android:padding="10dp"
-            app:layout_constraintBottom_toTopOf="@+id/signInButton"
+            app:layout_constraintBottom_toTopOf="@+id/createRdvButton"
             app:layout_constraintEnd_toStartOf="@+id/constraintLayout4"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="@id/leftGuideLine"
@@ -339,18 +340,17 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <Button
-            android:id="@+id/signInButton"
+            android:id="@+id/createRdvButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
             android:backgroundTint="?colorPrimary"
             android:fontFamily="@font/poppins_bold"
-            android:padding="10dp"
+            android:padding="15dp"
             android:text="Créer un Rendez-Vous"
             android:textAllCaps="false"
             app:cornerRadius="12dp"
             app:layout_constraintBottom_toBottomOf="parent"
+
             app:layout_constraintEnd_toStartOf="@+id/rightGuideLine"
             app:layout_constraintStart_toStartOf="@+id/leftGuideLine"
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout3" />

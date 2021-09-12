@@ -1,11 +1,13 @@
 package com.example.esiproject.ui.home
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.viewModels
 import com.example.esiproject.R
 import com.example.esiproject.databinding.ActivityHomeBinding
+import com.example.esiproject.ui.rdv.RdvActivity
 import com.example.esiproject.utils.AppAuthManager
 import dagger.hilt.android.AndroidEntryPoint
 import net.openid.appauth.AuthorizationException
@@ -36,5 +38,10 @@ class HomeActivity : AppCompatActivity() {
         val response = AuthorizationResponse.fromIntent(intent)
         val exception = AuthorizationException.fromIntent(intent)
         viewModel.checkAuthorization(response, exception)
+
+        binding.createRdvButton.setOnClickListener {
+            val intent = Intent(this, RdvActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

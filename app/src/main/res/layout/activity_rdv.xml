@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/grandient_background"
+    tools:context=".ui.rdv.RdvActivity" >
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="90dp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/rounded_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/bienvenue"
+            android:layout_width="362dp"
+            android:layout_height="wrap_content"
+            android:text="Bienvenue Bousmat Abdelmounaim"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toTopOf="@+id/view"
+            app:layout_constraintEnd_toStartOf="@+id/rightGuideLine"
+            app:layout_constraintStart_toStartOf="@+id/leftGuideLine"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/leftGuideLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="25dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/rightGuideLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="25dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/topGuideLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="20dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/bottomGuideLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="20dp" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="362dp"
+            android:layout_height="1dp"
+            android:background="@android:color/black"
+            app:layout_constraintBottom_toTopOf="@+id/monthYear"
+            app:layout_constraintEnd_toStartOf="@+id/rightGuideLine"
+            app:layout_constraintStart_toStartOf="@+id/leftGuideLine"
+            app:layout_constraintTop_toBottomOf="@+id/bienvenue" />
+
+        <TextView
+            android:id="@+id/monthYear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="18sp"
+
+            app:layout_constraintBottom_toTopOf="@+id/dayRv"
+            app:layout_constraintStart_toStartOf="@+id/leftGuideLine"
+            app:layout_constraintTop_toBottomOf="@+id/view"
+            tools:text="Septembre 2021" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/dayRv"
+            android:layout_width="411dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/chipGroup"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/monthYear" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroup"
+            android:layout_width="362dp"
+            android:layout_height="wrap_content"
+            app:chipSpacingHorizontal="50dp"
+            app:layout_constraintBottom_toTopOf="@+id/createRdvButton"
+            app:layout_constraintEnd_toStartOf="@+id/rightGuideLine"
+            app:layout_constraintStart_toStartOf="@+id/leftGuideLine"
+            app:layout_constraintTop_toBottomOf="@+id/dayRv"
+            app:singleSelection="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/matin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Matin"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_1"
+                style="@style/CustomChipChoice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="08:30 AM"
+                app:chipCornerRadius="7dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_2"
+                style="@style/CustomChipChoice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="09:00 AM"
+                app:chipCornerRadius="7dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_3"
+                style="@style/CustomChipChoice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="09:30 AM"
+                app:chipCornerRadius="7dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_4"
+                style="@style/CustomChipChoice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="10:00 AM"
+                app:chipCornerRadius="7dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_5"
+                style="@style/CustomChipChoice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="10:30 AM"
+                app:chipCornerRadius="7dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_6"
+                style="@style/CustomChipChoice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="11:00 AM"
+                app:chipCornerRadius="7dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/soir"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Soir"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_7"
+                style="@style/CustomChipChoice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="02:00 PM"
+                app:chipCornerRadius="7dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_8"
+                style="@style/CustomChipChoice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="02:30 PM"
+                app:chipCornerRadius="7dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_9"
+                style="@style/CustomChipChoice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="03:00 PM"
+                app:chipCornerRadius="7dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_10"
+                style="@style/CustomChipChoice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="03:30 AM"
+                app:chipCornerRadius="7dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_11"
+                style="@style/CustomChipChoice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="04:00 AM"
+                app:chipCornerRadius="7dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_12"
+                style="@style/CustomChipChoice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="04:30 AM"
+                app:chipCornerRadius="7dp" />
+        </com.google.android.material.chip.ChipGroup>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/createRdvButton"
+            android:layout_width="363dp"
+            android:layout_height="68dp"
+            android:fontFamily="@font/poppins_bold"
+            android:padding="15dp"
+            android:text="Créer un Rendez-Vous"
+            app:backgroundTint="@color/button_disabled"
+            android:textAllCaps="false"
+            app:cornerRadius="12dp"
+            android:enabled="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/rightGuideLine"
+            app:layout_constraintStart_toStartOf="@+id/leftGuideLine"
+            app:layout_constraintTop_toBottomOf="@+id/chipGroup" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_menu" />
+</androidx.constraintlayout.widget.ConstraintLayout>

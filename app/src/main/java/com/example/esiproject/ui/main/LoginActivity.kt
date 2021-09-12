@@ -34,7 +34,7 @@ class LoginActivity : AppCompatActivity() {
 
         supportActionBar?.hide()
 
-        binding.signInButton.setOnClickListener {
+        binding.createRdvButton.setOnClickListener {
             startAuthorization()
         }
     }
