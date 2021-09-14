@@ -1,0 +1,26 @@
+query HomeData {
+    currentUser {
+        nom
+        prenom
+        isCompleted
+        dossierMedicalsByUserId {
+            nodes {
+                biometriqueById {
+                    isCompleted
+                }
+                antecedentsPersonnelleById{
+                    isCompleted
+                }
+                antecedentsMedicoChirugicauxById{
+                    isCompleted
+                }
+            }
+        }
+    }
+    allRendezVous(orderBy: [UPDATED_AT_DESC]) {
+        nodes {
+            startDate
+        }
+    }
+}
+

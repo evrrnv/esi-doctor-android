@@ -7,6 +7,8 @@
     android:background="@drawable/grandient_background"
     tools:context=".ui.home.HomeActivity" >
 
+
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
         android:layout_width="wrap_content"
@@ -14,9 +16,23 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="90dp" />
 
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cst"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:visibility="gone"
+        tools:visibility="visible"
         android:background="@drawable/rounded_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -29,7 +45,6 @@
             android:id="@+id/bienvenue"
             android:layout_width="362dp"
             android:layout_height="wrap_content"
-            android:text="Bienvenue Bousmat Abdelmounaim"
             android:textSize="22sp"
             app:layout_constraintBottom_toTopOf="@+id/view"
             app:layout_constraintEnd_toStartOf="@+id/rightGuideLine"
@@ -96,7 +111,7 @@
             android:background="@drawable/circle_background"
             android:gravity="center"
             android:padding="8dp"
-            android:text="14 M"
+            android:text="0 M"
             android:textSize="25sp"
             app:layout_constraintBottom_toBottomOf="@+id/hours"
             app:layout_constraintEnd_toStartOf="@+id/rightGuideLine"
@@ -112,7 +127,7 @@
             android:background="@drawable/circle_background"
             android:gravity="center"
             android:padding="8dp"
-            android:text="03 H"
+            android:text="0 H"
             android:textSize="25sp"
             app:layout_constraintBottom_toTopOf="@+id/consulter_rdv"
             app:layout_constraintEnd_toStartOf="@+id/rightGuideLine"
@@ -128,7 +143,7 @@
             android:background="@drawable/circle_background"
             android:gravity="center"
             android:padding="8dp"
-            android:text="30 J"
+            android:text="0 J"
             android:textSize="25sp"
             app:layout_constraintBottom_toBottomOf="@+id/hours"
             app:layout_constraintStart_toStartOf="@+id/leftGuideLine"
@@ -186,7 +201,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:background="@drawable/dm_status_corners"
-                android:backgroundTint="#56C596"
+                tools:backgroundTint="#56C596"
                 android:text="Complet"
                 android:textColor="@color/white"
                 android:textSize="10sp"
@@ -234,7 +249,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:background="@drawable/dm_status_corners"
-                android:backgroundTint="#56C596"
+                tools:backgroundTint="#56C596"
                 android:text="Complet"
                 android:textColor="@color/white"
                 android:textSize="10sp"
@@ -282,7 +297,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:background="@drawable/dm_status_corners"
-                android:backgroundTint="#56C596"
+                tools:backgroundTint="#56C596"
                 android:text="Complet"
                 android:textColor="@color/white"
                 android:textSize="10sp"
@@ -330,7 +345,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:background="@drawable/dm_status_corners"
-                android:backgroundTint="#F63232"
+                tools:backgroundTint="#F63232"
                 android:text="Complet"
                 android:textColor="@color/white"
                 android:textSize="10sp"

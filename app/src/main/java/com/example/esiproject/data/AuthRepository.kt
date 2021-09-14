@@ -16,5 +16,5 @@ class AuthRepository @Inject constructor(private val appAuthManager: AppAuthMana
         }
     }
 
-    fun getAuthRequest(): AuthorizationRequest = appAuthManager.getAuthRequest()
+    fun getAccessToken(): String? = appAuthManager.getAccessToken()
 }

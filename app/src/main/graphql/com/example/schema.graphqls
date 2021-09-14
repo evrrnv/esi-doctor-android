@@ -139,8 +139,6 @@ type Query implements Node {
 
   recentUpdatedDossierMedicals("Only read the first `n` values of the set." first: Int, "Only read the last `n` values of the set." last: Int, "Skip the first `n` values from our `after` cursor, an alternative to cursor\nbased pagination. May not be used with `last`." offset: Int, "Read all values in the set before (above) this cursor." before: Cursor, "Read all values in the set after (below) this cursor." after: Cursor, "A filter to be used in determining which values should be returned by the collection." filter: RecentUpdatedDossierMedicalsRecordFilter): RecentUpdatedDossierMedicalsConnection
 
-  rendezVousDuJour(rendezVousDate: Date): RendezVous
-
   statistics(days: Int): StatisticsType
 
   """
@@ -385,6 +383,8 @@ type UserAccount implements Node {
 
   familyStatus: FamilyStatus
 
+  isCompleted: Boolean
+
   updatedAt: Datetime!
 
   """
@@ -405,7 +405,7 @@ type UserAccount implements Node {
   """
   Reads and enables pagination through a set of `RendezVous`.
   """
-  rendezVousByMedcin("Only read the first `n` values of the set." first: Int, "Only read the last `n` values of the set." last: Int, "Skip the first `n` values from our `after` cursor, an alternative to cursor\nbased pagination. May not be used with `last`." offset: Int, "Read all values in the set before (above) this cursor." before: Cursor, "Read all values in the set after (below) this cursor." after: Cursor, "The method to use when ordering `RendezVous`." orderBy: [RendezVousOrderBy!] = [PRIMARY_KEY_ASC], "A condition to be used in determining which values should be returned by the collection." condition: RendezVousCondition, "A filter to be used in determining which values should be returned by the collection." filter: RendezVousFilter): RendezVousConnection!
+  rendezVousByMedecin("Only read the first `n` values of the set." first: Int, "Only read the last `n` values of the set." last: Int, "Skip the first `n` values from our `after` cursor, an alternative to cursor\nbased pagination. May not be used with `last`." offset: Int, "Read all values in the set before (above) this cursor." before: Cursor, "Read all values in the set after (below) this cursor." after: Cursor, "The method to use when ordering `RendezVous`." orderBy: [RendezVousOrderBy!] = [PRIMARY_KEY_ASC], "A condition to be used in determining which values should be returned by the collection." condition: RendezVousCondition, "A filter to be used in determining which values should be returned by the collection." filter: RendezVousFilter): RendezVousConnection!
 }
 
 enum Role {
@@ -763,11 +763,11 @@ type RendezVous implements Node {
 
   userId: UUID
 
-  medcin: UUID
+  medecin: UUID
 
-  startdate: Datetime!
+  startDate: Datetime!
 
-  enddate: Datetime!
+  endDate: Datetime!
 
   updatedAt: Datetime!
 
@@ -779,7 +779,7 @@ type RendezVous implements Node {
   """
   Reads a single `UserAccount` that is related to this `RendezVous`.
   """
-  userAccountByMedcin: UserAccount
+  userAccountByMedecin: UserAccount
 }
 
 """
@@ -811,17 +811,17 @@ enum RendezVousOrderBy {
 
   USER_ID_DESC
 
-  MEDCIN_ASC
+  MEDECIN_ASC
 
-  MEDCIN_DESC
+  MEDECIN_DESC
 
-  STARTDATE_ASC
+  START_DATE_ASC
 
-  STARTDATE_DESC
+  START_DATE_DESC
 
-  ENDDATE_ASC
+  END_DATE_ASC
 
-  ENDDATE_DESC
+  END_DATE_DESC
 
   UPDATED_AT_ASC
 
@@ -848,19 +848,19 @@ input RendezVousCondition {
   userId: UUID
 
   """
-  Checks for equality with the object’s `medcin` field.
+  Checks for equality with the object’s `medecin` field.
   """
-  medcin: UUID
+  medecin: UUID
 
   """
-  Checks for equality with the object’s `startdate` field.
+  Checks for equality with the object’s `startDate` field.
   """
-  startdate: Datetime
+  startDate: Datetime
 
   """
-  Checks for equality with the object’s `enddate` field.
+  Checks for equality with the object’s `endDate` field.
   """
-  enddate: Datetime
+  endDate: Datetime
 
   """
   Checks for equality with the object’s `updatedAt` field.
@@ -883,19 +883,19 @@ input RendezVousFilter {
   userId: UUIDFilter
 
   """
-  Filter by the object’s `medcin` field.
+  Filter by the object’s `medecin` field.
   """
-  medcin: UUIDFilter
+  medecin: UUIDFilter
 
   """
-  Filter by the object’s `startdate` field.
+  Filter by the object’s `startDate` field.
   """
-  startdate: DatetimeFilter
+  startDate: DatetimeFilter
 
   """
-  Filter by the object’s `enddate` field.
+  Filter by the object’s `endDate` field.
   """
-  enddate: DatetimeFilter
+  endDate: DatetimeFilter
 
   """
   Filter by the object’s `updatedAt` field.
@@ -3577,6 +3577,10 @@ enum UserAccountsOrderBy {
 
   FAMILY_STATUS_DESC
 
+  IS_COMPLETED_ASC
+
+  IS_COMPLETED_DESC
+
   UPDATED_AT_ASC
 
   UPDATED_AT_DESC
@@ -3662,6 +3666,11 @@ input UserAccountCondition {
   familyStatus: FamilyStatus
 
   """
+  Checks for equality with the object’s `isCompleted` field.
+  """
+  isCompleted: Boolean
+
+  """
   Checks for equality with the object’s `updatedAt` field.
   """
   updatedAt: Datetime
@@ -3740,6 +3749,11 @@ input UserAccountFilter {
   Filter by the object’s `familyStatus` field.
   """
   familyStatus: FamilyStatusFilter
+
+  """
+  Filter by the object’s `isCompleted` field.
+  """
+  isCompleted: BooleanFilter
 
   """
   Filter by the object’s `updatedAt` field.
@@ -4658,7 +4672,7 @@ type CreateRendezVousPayload {
   """
   Reads a single `UserAccount` that is related to this `RendezVous`.
   """
-  userAccountByMedcin: UserAccount
+  userAccountByMedecin: UserAccount
 
   """
   An edge for our `RendezVous`. May be used by Relay 1.
@@ -4686,13 +4700,17 @@ input CreateRendezVousInput {
 An input for mutations affecting `RendezVous`
 """
 input RendezVousInput {
+  id: UUID
+
   userId: UUID
 
-  medcin: UUID
+  medecin: UUID
 
-  startdate: Datetime!
+  startDate: Datetime!
 
-  enddate: Datetime!
+  endDate: Datetime!
+
+  updatedAt: Datetime
 }
 
 """
@@ -5648,7 +5666,7 @@ type UpdateRendezVousPayload {
   """
   Reads a single `UserAccount` that is related to this `RendezVous`.
   """
-  userAccountByMedcin: UserAccount
+  userAccountByMedecin: UserAccount
 
   """
   An edge for our `RendezVous`. May be used by Relay 1.
@@ -5685,11 +5703,13 @@ input RendezVousPatch {
 
   userId: UUID
 
-  medcin: UUID
+  medecin: UUID
 
-  startdate: Datetime
+  startDate: Datetime
 
-  enddate: Datetime
+  endDate: Datetime
+
+  updatedAt: Datetime
 }
 
 """
@@ -5863,6 +5883,8 @@ input UserAccountPatch {
   profilePicture: String
 
   familyStatus: FamilyStatus
+
+  isCompleted: Boolean
 }
 
 """
@@ -5931,7 +5953,7 @@ type DeleteRendezVousPayload {
   """
   Reads a single `UserAccount` that is related to this `RendezVous`.
   """
-  userAccountByMedcin: UserAccount
+  userAccountByMedecin: UserAccount
 
   """
   An edge for our `RendezVous`. May be used by Relay 1.

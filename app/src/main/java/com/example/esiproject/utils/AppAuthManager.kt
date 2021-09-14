@@ -111,7 +111,7 @@ class AppAuthManager (context: Context) {
         return authStateManager.authState!!.needsTokenRefresh
     }
 
-    private fun getAccessToken(): String? {
+    fun getAccessToken(): String? {
         return authStateManager.authState?.accessToken
     }
 

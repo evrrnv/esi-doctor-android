@@ -105,7 +105,7 @@ class RdvActivity : AppCompatActivity() {
     }
 
     private fun daysAfter(number: Int) : String {
-        val simpleFormat = SimpleDateFormat("yyyy-MM-dd", Locale.FRENCH)
+        val simpleFormat = SimpleDateFormat("EEE MMM dd HH:mm:ss z yyyy", Locale.FRENCH)
         val calendar = Calendar.getInstance()
         calendar.add(Calendar.DATE, number)
         return simpleFormat.format(calendar.time)

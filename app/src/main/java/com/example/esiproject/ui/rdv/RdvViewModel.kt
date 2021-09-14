@@ -5,9 +5,15 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.apollographql.apollo3.ApolloClient
+import com.apollographql.apollo3.api.http.HttpRequest
+import com.apollographql.apollo3.api.http.HttpResponse
+import com.apollographql.apollo3.api.http.withHeader
 import com.apollographql.apollo3.exception.ApolloException
+import com.apollographql.apollo3.interceptor.ApolloInterceptor
+import com.apollographql.apollo3.network.http.*
 import com.example.CheckRdvAvailabilityQuery
 import com.example.esiproject.data.AuthRepository
+import com.example.esiproject.utils.ApolloClientManager
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import net.openid.appauth.AuthorizationException
@@ -29,16 +35,19 @@ class RdvViewModel @Inject constructor(private val authRepository: AuthRepositor
     }
 
     fun checkRdvAvailability(date: Any) {
-        val apolloClient = ApolloClient(serverUrl = "https://1sc-project.moun3im.com/graphql")
-        viewModelScope.launch {
-            val response = try {
-                apolloClient.query(CheckRdvAvailabilityQuery(date))
-            } catch (e: ApolloException) {
-                return@launch
-            }
+        val token = authRepository.getAccessToken()
 
-            if (response.data?.checkRdvAvailability != null){
-                rdvAvailability.value = response.data!!.checkRdvAvailability
+        if (token != null) {
+            val apolloClient = ApolloClientManager().getApolloClient(token)
+            viewModelScope.launch {
+                val response = try {
+                    apolloClient.query(CheckRdvAvailabilityQuery(date))
+                } catch (e: ApolloException) {
+                    return@launch
+                }
+                if (response.data?.checkRdvAvailability != null){
+                    rdvAvailability.value = response.data!!.checkRdvAvailability
+                }
             }
         }
     }
