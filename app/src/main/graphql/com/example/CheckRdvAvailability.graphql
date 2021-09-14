@@ -1,0 +1,16 @@
+query CheckRdvAvailability($date: Date!) {
+    checkRdvAvailability(date: $date) {
+        r830
+        r900
+        r930
+        r100
+        r130
+        r110
+        r200
+        r230
+        r300
+        r330
+        r400
+        r430
+    }
+}

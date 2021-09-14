@@ -9,7 +9,7 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.esiproject.R
 
-class RecyclerViewAdapter(private val dataSet: ArrayList<Day>) : RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>() {
+class RecyclerViewAdapter(private val dataSet: ArrayList<Day>, private val listener: (Int) -> Unit) : RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>() {
     private var selectedItemPosition: Int = 0
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -28,6 +28,7 @@ class RecyclerViewAdapter(private val dataSet: ArrayList<Day>) : RecyclerView.Ad
         viewHolder.dayName.text = dataSet[position].dayName
         viewHolder.dayNumber.text = dataSet[position].dayNumber.toString()
         viewHolder.cardView.setOnClickListener {
+            listener(position)
             selectedItemPosition = position
             notifyDataSetChanged()
         }

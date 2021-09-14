@@ -1,20 +1,13 @@
 package com.example.esiproject.ui.rdv
 
-import android.graphics.Color
-import android.graphics.PorterDuff
 import android.os.Bundle
 import android.util.Log
-import android.view.TextureView
-import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.esiproject.R
 import com.example.esiproject.databinding.ActivityRdvBinding
 import com.example.esiproject.utils.AppAuthManager
-import com.google.android.material.card.MaterialCardView
-import com.google.android.material.chip.Chip
 import dagger.hilt.android.AndroidEntryPoint
 import net.openid.appauth.AuthorizationException
 import net.openid.appauth.AuthorizationResponse
@@ -31,8 +24,6 @@ class RdvActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRdvBinding
 
     private val viewModel: RdvViewModel by viewModels()
-
-    private var dayCardSelected: String? = null
 
     @Inject
     internal lateinit var appAuthManager: AppAuthManager
@@ -58,7 +49,26 @@ class RdvActivity : AppCompatActivity() {
         daysList.add(d1)
         daysList.add(d2)
 
-        val dayAdapter = RecyclerViewAdapter(getDateRange())
+        viewModel.checkRdvAvailability(daysAfter(0))
+
+        viewModel.rdvAvailability.observe(this, {
+            binding.chip1.isEnabled = it.r830 == false
+            binding.chip2.isEnabled = it.r900 == false
+            binding.chip3.isEnabled = it.r930 == false
+            binding.chip4.isEnabled = it.r100 == false
+            binding.chip5.isEnabled = it.r130 == false
+            binding.chip6.isEnabled = it.r110 == false
+            binding.chip7.isEnabled = it.r200 == false
+            binding.chip8.isEnabled = it.r230 == false
+            binding.chip9.isEnabled = it.r300 == false
+            binding.chip10.isEnabled = it.r330 == false
+            binding.chip11.isEnabled = it.r400 == false
+            binding.chip12.isEnabled = it.r430 == false
+        })
+
+        val dayAdapter = RecyclerViewAdapter(getDateRange()) {
+            viewModel.checkRdvAvailability(daysAfter(it))
+        }
 
         binding.dayRv.adapter = dayAdapter
 
@@ -83,7 +93,7 @@ class RdvActivity : AppCompatActivity() {
 
         val days = ArrayList<Day>()
         val delta: Int =
-            -now.get(GregorianCalendar.DAY_OF_WEEK) + 2
+            -now.get(GregorianCalendar.DAY_OF_WEEK) + 3
 
         now.add(Calendar.DAY_OF_MONTH, delta)
         for (i in 0..6) {
@@ -92,6 +102,13 @@ class RdvActivity : AppCompatActivity() {
             now.add(Calendar.DAY_OF_MONTH, 1)
         }
         return days
+    }
+
+    private fun daysAfter(number: Int) : String {
+        val simpleFormat = SimpleDateFormat("yyyy-MM-dd", Locale.FRENCH)
+        val calendar = Calendar.getInstance()
+        calendar.add(Calendar.DATE, number)
+        return simpleFormat.format(calendar.time)
     }
 
 }
