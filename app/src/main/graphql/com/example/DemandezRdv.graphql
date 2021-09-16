@@ -1,0 +1,7 @@
+mutation DemandezRdv($data: RendezVousInput!) {
+    createRendezVous(input: { rendezVous: $data }) {
+        rendezVous {
+            id
+        }
+    }
+}

@@ -23,15 +23,21 @@ class HomeViewModel @Inject constructor(private val authRepository: AuthReposito
         MutableLiveData<HomeDataQuery.Data>()
     }
 
+    val isAuth: MutableLiveData<Boolean> by lazy {
+        MutableLiveData<Boolean>()
+    }
+
     fun checkAuthorization(response: AuthorizationResponse?, exception: AuthorizationException?) {
         viewModelScope.launch {
-            authRepository.checkAuthorization(response, exception)
+            isAuth.value = authRepository.checkAuthorization(response, exception).isSuccess
         }
     }
 
     fun getHomeData() {
         val token = authRepository.getAccessToken()
+
         if (token != null) {
+
             viewModelScope.launch {
                 val apolloClient = ApolloClientManager().getApolloClient(token)
                 val response = try {

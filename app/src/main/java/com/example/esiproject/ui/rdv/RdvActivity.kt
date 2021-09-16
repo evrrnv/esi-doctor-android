@@ -1,13 +1,17 @@
 package com.example.esiproject.ui.rdv
 
+import android.content.DialogInterface
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.viewModels
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.esiproject.R
 import com.example.esiproject.databinding.ActivityRdvBinding
 import com.example.esiproject.utils.AppAuthManager
+import com.example.type.RendezVousInput
+import com.google.android.material.chip.Chip
 import dagger.hilt.android.AndroidEntryPoint
 import net.openid.appauth.AuthorizationException
 import net.openid.appauth.AuthorizationResponse
@@ -15,6 +19,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 import javax.inject.Inject
 import kotlin.collections.ArrayList
+
 
 @AndroidEntryPoint
 class RdvActivity : AppCompatActivity() {
@@ -24,6 +29,9 @@ class RdvActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRdvBinding
 
     private val viewModel: RdvViewModel by viewModels()
+
+    private  var selectedDate: String? = null
+    private  var selectedTime: String? = null
 
     @Inject
     internal lateinit var appAuthManager: AppAuthManager
@@ -42,6 +50,11 @@ class RdvActivity : AppCompatActivity() {
         val exception = AuthorizationException.fromIntent(intent)
         viewModel.checkAuthorization(response, exception)
 
+        val extras = intent.extras
+        if (extras != null) {
+            binding.bienvenue.text = extras.getString("bienvenueText")
+        }
+
         val d1 = Day("Mer", 21)
         val d2 = Day("Jeu", 22)
 
@@ -49,7 +62,10 @@ class RdvActivity : AppCompatActivity() {
         daysList.add(d1)
         daysList.add(d2)
 
-        viewModel.checkRdvAvailability(daysAfter(0))
+        viewModel.isAuth.observe(this, {
+            viewModel.checkRdvAvailability(daysAfter(0))
+            selectedDate = daysAfter(0)
+        })
 
         viewModel.rdvAvailability.observe(this, {
             binding.chip1.isEnabled = it.r830 == false
@@ -68,6 +84,7 @@ class RdvActivity : AppCompatActivity() {
 
         val dayAdapter = RecyclerViewAdapter(getDateRange()) {
             viewModel.checkRdvAvailability(daysAfter(it))
+            selectedDate = daysAfter(it)
         }
 
         binding.dayRv.adapter = dayAdapter
@@ -82,8 +99,32 @@ class RdvActivity : AppCompatActivity() {
 
         binding.chipGroup.setOnCheckedChangeListener { group, checkedId ->
             binding.createRdvButton.isEnabled = checkedId != -1
+            selectedTime = group.findViewById<Chip>(checkedId).text.toString()
         }
 
+        binding.createRdvButton.setOnClickListener{
+            AlertDialog.Builder(this)
+                .setTitle("Confirmer")
+                .setMessage("Voulez-vous vraiment envoyer une demande de rendez-vous ")
+                .setPositiveButton("Oui", DialogInterface.OnClickListener {a, b ->
+                    Log.i(tag, "$selectedDate $selectedTime")
+                    val startDate = SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.FRENCH).parse("$selectedDate $selectedTime")
+                    val cal = Calendar.getInstance()
+                    cal.time = startDate!!
+                    cal.add(Calendar.MINUTE, 30)
+                    val endDate = cal.time;
+                    Log.i(tag, "$startDate $endDate" )
+                    viewModel.demandezRdv(RendezVousInput(startDate = startDate, endDate = endDate))
+                })
+                .setNegativeButton("Non", null).
+                show()
+        }
+
+        viewModel.rdvIsCreated.observe(this, {
+            if (it == true) {
+                finish()
+            }
+        })
     }
 
     private fun getDateRange(): ArrayList<Day> {
@@ -93,7 +134,7 @@ class RdvActivity : AppCompatActivity() {
 
         val days = ArrayList<Day>()
         val delta: Int =
-            -now.get(GregorianCalendar.DAY_OF_WEEK) + 3
+            -now.get(GregorianCalendar.DAY_OF_WEEK) + 5
 
         now.add(Calendar.DAY_OF_MONTH, delta)
         for (i in 0..6) {
@@ -105,7 +146,7 @@ class RdvActivity : AppCompatActivity() {
     }
 
     private fun daysAfter(number: Int) : String {
-        val simpleFormat = SimpleDateFormat("EEE MMM dd HH:mm:ss z yyyy", Locale.FRENCH)
+        val simpleFormat = SimpleDateFormat("yyyy-MM-dd", Locale.FRENCH)
         val calendar = Calendar.getInstance()
         calendar.add(Calendar.DATE, number)
         return simpleFormat.format(calendar.time)

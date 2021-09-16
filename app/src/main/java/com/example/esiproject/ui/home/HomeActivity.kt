@@ -19,6 +19,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
+import kotlin.collections.ArrayList
 
 @AndroidEntryPoint
 class HomeActivity : AppCompatActivity() {
@@ -47,10 +48,13 @@ class HomeActivity : AppCompatActivity() {
 
         binding.createRdvButton.setOnClickListener {
             val intent = Intent(this, RdvActivity::class.java)
+            intent.putExtra("bienvenueText", binding.bienvenue.text)
             startActivity(intent)
         }
 
-        viewModel.getHomeData()
+        viewModel.isAuth.observe(this, {
+            viewModel.getHomeData()
+        })
 
         viewModel.homeData.observe(this, {
             if (it.currentUser != null) {
@@ -63,28 +67,38 @@ class HomeActivity : AppCompatActivity() {
                 if (pIsComplete != null && bioIsComplete != null && prsIsComplete != null && chrIsComplete != null) {
                     if (pIsComplete) {
                         binding.textView7.background.setTint(Color.parseColor("#56C596"))
+                        binding.textView7.text = "complet"
                     } else {
                         binding.textView7.background.setTint(Color.parseColor("#F63232"))
+                        binding.textView7.text = "non complet"
                     }
                     if (bioIsComplete) {
                         binding.textView8.background.setTint(Color.parseColor("#56C596"))
+                        binding.textView8.text = "complet"
                     } else {
                         binding.textView8.background.setTint(Color.parseColor("#F63232"))
+                        binding.textView8.text = "non complet"
                     }
                     if (chrIsComplete) {
                         binding.textView10.background.setTint(Color.parseColor("#56C596"))
+                        binding.textView10.text = "complet"
                     } else {
                         binding.textView10.background.setTint(Color.parseColor("#F63232"))
+                        binding.textView10.text = "non complet"
                     }
                     if (prsIsComplete) {
                         binding.textView9.background.setTint(Color.parseColor("#56C596"))
+                        binding.textView9.text = "complet"
                     } else {
                         binding.textView9.background.setTint(Color.parseColor("#F63232"))
+                        binding.textView9.text = "non complet"
                     }
                     binding.progressBar.visibility = View.INVISIBLE
                     binding.cst.visibility = View.VISIBLE
                 }
-                if (it.allRendezVous != null && it.allRendezVous.nodes[0] != null) {
+                Log.i(tag, it.toString())
+
+                if (it.allRendezVous != null && it.allRendezVous.nodes.isNotEmpty()) {
                     val simpleFormat = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.FRENCH)
                     val mDate = simpleFormat.parse(it.allRendezVous.nodes[0]!!.startDate.toString().replace("T", " "))
                     val calendar = Calendar.getInstance()

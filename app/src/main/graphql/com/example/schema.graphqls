@@ -49,9 +49,24 @@ type Query implements Node {
   allDossierMedicals("Only read the first `n` values of the set." first: Int, "Only read the last `n` values of the set." last: Int, "Skip the first `n` values from our `after` cursor, an alternative to cursor\nbased pagination. May not be used with `last`." offset: Int, "Read all values in the set before (above) this cursor." before: Cursor, "Read all values in the set after (below) this cursor." after: Cursor, "The method to use when ordering `DossierMedical`." orderBy: [DossierMedicalsOrderBy!] = [PRIMARY_KEY_ASC], "A condition to be used in determining which values should be returned by the collection." condition: DossierMedicalCondition, "A filter to be used in determining which values should be returned by the collection." filter: DossierMedicalFilter): DossierMedicalsConnection
 
   """
+  Reads and enables pagination through a set of `EcoleNiveau`.
+  """
+  allEcoleNiveaus("Only read the first `n` values of the set." first: Int, "Only read the last `n` values of the set." last: Int, "Skip the first `n` values from our `after` cursor, an alternative to cursor\nbased pagination. May not be used with `last`." offset: Int, "Read all values in the set before (above) this cursor." before: Cursor, "Read all values in the set after (below) this cursor." after: Cursor, "The method to use when ordering `EcoleNiveau`." orderBy: [EcoleNiveausOrderBy!] = [PRIMARY_KEY_ASC], "A condition to be used in determining which values should be returned by the collection." condition: EcoleNiveauCondition, "A filter to be used in determining which values should be returned by the collection." filter: EcoleNiveauFilter): EcoleNiveausConnection
+
+  """
+  Reads and enables pagination through a set of `Endocrinologie`.
+  """
+  allEndocrinologies("Only read the first `n` values of the set." first: Int, "Only read the last `n` values of the set." last: Int, "Skip the first `n` values from our `after` cursor, an alternative to cursor\nbased pagination. May not be used with `last`." offset: Int, "Read all values in the set before (above) this cursor." before: Cursor, "Read all values in the set after (below) this cursor." after: Cursor, "The method to use when ordering `Endocrinologie`." orderBy: [EndocrinologiesOrderBy!] = [PRIMARY_KEY_ASC], "A condition to be used in determining which values should be returned by the collection." condition: EndocrinologieCondition, "A filter to be used in determining which values should be returned by the collection." filter: EndocrinologieFilter): EndocrinologiesConnection
+
+  """
   Reads and enables pagination through a set of `ExamenMedical`.
   """
   allExamenMedicals("Only read the first `n` values of the set." first: Int, "Only read the last `n` values of the set." last: Int, "Skip the first `n` values from our `after` cursor, an alternative to cursor\nbased pagination. May not be used with `last`." offset: Int, "Read all values in the set before (above) this cursor." before: Cursor, "Read all values in the set after (below) this cursor." after: Cursor, "The method to use when ordering `ExamenMedical`." orderBy: [ExamenMedicalsOrderBy!] = [PRIMARY_KEY_ASC], "A condition to be used in determining which values should be returned by the collection." condition: ExamenMedicalCondition, "A filter to be used in determining which values should be returned by the collection." filter: ExamenMedicalFilter): ExamenMedicalsConnection
+
+  """
+  Reads and enables pagination through a set of `ExamensComplementaire`.
+  """
+  allExamensComplementaires("Only read the first `n` values of the set." first: Int, "Only read the last `n` values of the set." last: Int, "Skip the first `n` values from our `after` cursor, an alternative to cursor\nbased pagination. May not be used with `last`." offset: Int, "Read all values in the set before (above) this cursor." before: Cursor, "Read all values in the set after (below) this cursor." after: Cursor, "The method to use when ordering `ExamensComplementaire`." orderBy: [ExamensComplementairesOrderBy!] = [PRIMARY_KEY_ASC], "A condition to be used in determining which values should be returned by the collection." condition: ExamensComplementaireCondition, "A filter to be used in determining which values should be returned by the collection." filter: ExamensComplementaireFilter): ExamensComplementairesConnection
 
   """
   Reads and enables pagination through a set of `GenitoUrinaire`.
@@ -59,14 +74,29 @@ type Query implements Node {
   allGenitoUrinaires("Only read the first `n` values of the set." first: Int, "Only read the last `n` values of the set." last: Int, "Skip the first `n` values from our `after` cursor, an alternative to cursor\nbased pagination. May not be used with `last`." offset: Int, "Read all values in the set before (above) this cursor." before: Cursor, "Read all values in the set after (below) this cursor." after: Cursor, "The method to use when ordering `GenitoUrinaire`." orderBy: [GenitoUrinairesOrderBy!] = [PRIMARY_KEY_ASC], "A condition to be used in determining which values should be returned by the collection." condition: GenitoUrinaireCondition, "A filter to be used in determining which values should be returned by the collection." filter: GenitoUrinaireFilter): GenitoUrinairesConnection
 
   """
+  Reads and enables pagination through a set of `HematologieAnglionnaire`.
+  """
+  allHematologieAnglionnaires("Only read the first `n` values of the set." first: Int, "Only read the last `n` values of the set." last: Int, "Skip the first `n` values from our `after` cursor, an alternative to cursor\nbased pagination. May not be used with `last`." offset: Int, "Read all values in the set before (above) this cursor." before: Cursor, "Read all values in the set after (below) this cursor." after: Cursor, "The method to use when ordering `HematologieAnglionnaire`." orderBy: [HematologieAnglionnairesOrderBy!] = [PRIMARY_KEY_ASC], "A condition to be used in determining which values should be returned by the collection." condition: HematologieAnglionnaireCondition, "A filter to be used in determining which values should be returned by the collection." filter: HematologieAnglionnaireFilter): HematologieAnglionnairesConnection
+
+  """
   Reads and enables pagination through a set of `Locomoteur`.
   """
   allLocomoteurs("Only read the first `n` values of the set." first: Int, "Only read the last `n` values of the set." last: Int, "Skip the first `n` values from our `after` cursor, an alternative to cursor\nbased pagination. May not be used with `last`." offset: Int, "Read all values in the set before (above) this cursor." before: Cursor, "Read all values in the set after (below) this cursor." after: Cursor, "The method to use when ordering `Locomoteur`." orderBy: [LocomoteursOrderBy!] = [PRIMARY_KEY_ASC], "A condition to be used in determining which values should be returned by the collection." condition: LocomoteurCondition, "A filter to be used in determining which values should be returned by the collection." filter: LocomoteurFilter): LocomoteursConnection
 
   """
+  Reads and enables pagination through a set of `NeurologiquePsychisme`.
+  """
+  allNeurologiquePsychismes("Only read the first `n` values of the set." first: Int, "Only read the last `n` values of the set." last: Int, "Skip the first `n` values from our `after` cursor, an alternative to cursor\nbased pagination. May not be used with `last`." offset: Int, "Read all values in the set before (above) this cursor." before: Cursor, "Read all values in the set after (below) this cursor." after: Cursor, "The method to use when ordering `NeurologiquePsychisme`." orderBy: [NeurologiquePsychismesOrderBy!] = [PRIMARY_KEY_ASC], "A condition to be used in determining which values should be returned by the collection." condition: NeurologiquePsychismeCondition, "A filter to be used in determining which values should be returned by the collection." filter: NeurologiquePsychismeFilter): NeurologiquePsychismesConnection
+
+  """
   Reads and enables pagination through a set of `Ophtalmologique`.
   """
   allOphtalmologiques("Only read the first `n` values of the set." first: Int, "Only read the last `n` values of the set." last: Int, "Skip the first `n` values from our `after` cursor, an alternative to cursor\nbased pagination. May not be used with `last`." offset: Int, "Read all values in the set before (above) this cursor." before: Cursor, "Read all values in the set after (below) this cursor." after: Cursor, "The method to use when ordering `Ophtalmologique`." orderBy: [OphtalmologiquesOrderBy!] = [PRIMARY_KEY_ASC], "A condition to be used in determining which values should be returned by the collection." condition: OphtalmologiqueCondition, "A filter to be used in determining which values should be returned by the collection." filter: OphtalmologiqueFilter): OphtalmologiquesConnection
+
+  """
+  Reads and enables pagination through a set of `Orientation`.
+  """
+  allOrientations("Only read the first `n` values of the set." first: Int, "Only read the last `n` values of the set." last: Int, "Skip the first `n` values from our `after` cursor, an alternative to cursor\nbased pagination. May not be used with `last`." offset: Int, "Read all values in the set before (above) this cursor." before: Cursor, "Read all values in the set after (below) this cursor." after: Cursor, "The method to use when ordering `Orientation`." orderBy: [OrientationsOrderBy!] = [PRIMARY_KEY_ASC], "A condition to be used in determining which values should be returned by the collection." condition: OrientationCondition, "A filter to be used in determining which values should be returned by the collection." filter: OrientationFilter): OrientationsConnection
 
   """
   Reads and enables pagination through a set of `Orl`.
@@ -77,6 +107,16 @@ type Query implements Node {
   Reads and enables pagination through a set of `PeauEtMuqueus`.
   """
   allPeauEtMuqueuses("Only read the first `n` values of the set." first: Int, "Only read the last `n` values of the set." last: Int, "Skip the first `n` values from our `after` cursor, an alternative to cursor\nbased pagination. May not be used with `last`." offset: Int, "Read all values in the set before (above) this cursor." before: Cursor, "Read all values in the set after (below) this cursor." after: Cursor, "The method to use when ordering `PeauEtMuqueus`." orderBy: [PeauEtMuqueusesOrderBy!] = [PRIMARY_KEY_ASC], "A condition to be used in determining which values should be returned by the collection." condition: PeauEtMuqueusCondition, "A filter to be used in determining which values should be returned by the collection." filter: PeauEtMuqueusFilter): PeauEtMuqueusesConnection
+
+  """
+  Reads and enables pagination through a set of `ProfilePsychologique`.
+  """
+  allProfilePsychologiques("Only read the first `n` values of the set." first: Int, "Only read the last `n` values of the set." last: Int, "Skip the first `n` values from our `after` cursor, an alternative to cursor\nbased pagination. May not be used with `last`." offset: Int, "Read all values in the set before (above) this cursor." before: Cursor, "Read all values in the set after (below) this cursor." after: Cursor, "The method to use when ordering `ProfilePsychologique`." orderBy: [ProfilePsychologiquesOrderBy!] = [PRIMARY_KEY_ASC], "A condition to be used in determining which values should be returned by the collection." condition: ProfilePsychologiqueCondition, "A filter to be used in determining which values should be returned by the collection." filter: ProfilePsychologiqueFilter): ProfilePsychologiquesConnection
+
+  """
+  Reads and enables pagination through a set of `RapportMedical`.
+  """
+  allRapportMedicals("Only read the first `n` values of the set." first: Int, "Only read the last `n` values of the set." last: Int, "Skip the first `n` values from our `after` cursor, an alternative to cursor\nbased pagination. May not be used with `last`." offset: Int, "Read all values in the set before (above) this cursor." before: Cursor, "Read all values in the set after (below) this cursor." after: Cursor, "The method to use when ordering `RapportMedical`." orderBy: [RapportMedicalsOrderBy!] = [PRIMARY_KEY_ASC], "A condition to be used in determining which values should be returned by the collection." condition: RapportMedicalCondition, "A filter to be used in determining which values should be returned by the collection." filter: RapportMedicalFilter): RapportMedicalsConnection
 
   """
   Reads and enables pagination through a set of `RendezVous`.
@@ -105,17 +145,33 @@ type Query implements Node {
 
   dossierMedicalById(id: UUID!): DossierMedical
 
+  ecoleNiveauByNiveau(niveau: Int!): EcoleNiveau
+
+  endocrinologieById(id: UUID!): Endocrinologie
+
   examenMedicalById(id: UUID!): ExamenMedical
+
+  examensComplementaireById(id: UUID!): ExamensComplementaire
 
   genitoUrinaireById(id: UUID!): GenitoUrinaire
 
+  hematologieAnglionnaireById(id: UUID!): HematologieAnglionnaire
+
   locomoteurById(id: UUID!): Locomoteur
 
+  neurologiquePsychismeById(id: UUID!): NeurologiquePsychisme
+
   ophtalmologiqueById(id: UUID!): Ophtalmologique
+
+  orientationById(id: UUID!): Orientation
 
   orlById(id: UUID!): Orl
 
   peauEtMuqueusById(id: UUID!): PeauEtMuqueus
+
+  profilePsychologiqueById(id: UUID!): ProfilePsychologique
+
+  rapportMedicalById(id: UUID!): RapportMedical
 
   rendezVousById(id: UUID!): RendezVous
 
@@ -130,6 +186,8 @@ type Query implements Node {
   checkRdvAvailability(date: Date): CheckRdvAvailabilityType
 
   completedDossierMedicalsCounter(role: Role): CompletedUncompleted
+
+  currentRole: String
 
   currentUser: UserAccount
 
@@ -172,9 +230,24 @@ type Query implements Node {
   dossierMedical("The globally unique `ID` to be used in selecting a single `DossierMedical`." nodeId: ID!): DossierMedical
 
   """
+  Reads a single `EcoleNiveau` using its globally unique `ID`.
+  """
+  ecoleNiveau("The globally unique `ID` to be used in selecting a single `EcoleNiveau`." nodeId: ID!): EcoleNiveau
+
+  """
+  Reads a single `Endocrinologie` using its globally unique `ID`.
+  """
+  endocrinologie("The globally unique `ID` to be used in selecting a single `Endocrinologie`." nodeId: ID!): Endocrinologie
+
+  """
   Reads a single `ExamenMedical` using its globally unique `ID`.
   """
   examenMedical("The globally unique `ID` to be used in selecting a single `ExamenMedical`." nodeId: ID!): ExamenMedical
+
+  """
+  Reads a single `ExamensComplementaire` using its globally unique `ID`.
+  """
+  examensComplementaire("The globally unique `ID` to be used in selecting a single `ExamensComplementaire`." nodeId: ID!): ExamensComplementaire
 
   """
   Reads a single `GenitoUrinaire` using its globally unique `ID`.
@@ -182,14 +255,29 @@ type Query implements Node {
   genitoUrinaire("The globally unique `ID` to be used in selecting a single `GenitoUrinaire`." nodeId: ID!): GenitoUrinaire
 
   """
+  Reads a single `HematologieAnglionnaire` using its globally unique `ID`.
+  """
+  hematologieAnglionnaire("The globally unique `ID` to be used in selecting a single `HematologieAnglionnaire`." nodeId: ID!): HematologieAnglionnaire
+
+  """
   Reads a single `Locomoteur` using its globally unique `ID`.
   """
   locomoteur("The globally unique `ID` to be used in selecting a single `Locomoteur`." nodeId: ID!): Locomoteur
 
   """
+  Reads a single `NeurologiquePsychisme` using its globally unique `ID`.
+  """
+  neurologiquePsychisme("The globally unique `ID` to be used in selecting a single `NeurologiquePsychisme`." nodeId: ID!): NeurologiquePsychisme
+
+  """
   Reads a single `Ophtalmologique` using its globally unique `ID`.
   """
   ophtalmologique("The globally unique `ID` to be used in selecting a single `Ophtalmologique`." nodeId: ID!): Ophtalmologique
+
+  """
+  Reads a single `Orientation` using its globally unique `ID`.
+  """
+  orientation("The globally unique `ID` to be used in selecting a single `Orientation`." nodeId: ID!): Orientation
 
   """
   Reads a single `Orl` using its globally unique `ID`.
@@ -200,6 +288,16 @@ type Query implements Node {
   Reads a single `PeauEtMuqueus` using its globally unique `ID`.
   """
   peauEtMuqueus("The globally unique `ID` to be used in selecting a single `PeauEtMuqueus`." nodeId: ID!): PeauEtMuqueus
+
+  """
+  Reads a single `ProfilePsychologique` using its globally unique `ID`.
+  """
+  profilePsychologique("The globally unique `ID` to be used in selecting a single `ProfilePsychologique`." nodeId: ID!): ProfilePsychologique
+
+  """
+  Reads a single `RapportMedical` using its globally unique `ID`.
+  """
+  rapportMedical("The globally unique `ID` to be used in selecting a single `RapportMedical`." nodeId: ID!): RapportMedical
 
   """
   Reads a single `RendezVous` using its globally unique `ID`.
@@ -372,6 +470,8 @@ type UserAccount implements Node {
   sexe: Sexe
 
   niveau: Int
+
+  groupe: Int
 
   specialite: Specialite
 
@@ -769,6 +869,10 @@ type RendezVous implements Node {
 
   endDate: Datetime!
 
+  description: String
+
+  isValid: Boolean
+
   updatedAt: Datetime!
 
   """
@@ -823,6 +927,14 @@ enum RendezVousOrderBy {
 
   END_DATE_DESC
 
+  DESCRIPTION_ASC
+
+  DESCRIPTION_DESC
+
+  IS_VALID_ASC
+
+  IS_VALID_DESC
+
   UPDATED_AT_ASC
 
   UPDATED_AT_DESC
@@ -863,6 +975,16 @@ input RendezVousCondition {
   endDate: Datetime
 
   """
+  Checks for equality with the object’s `description` field.
+  """
+  description: String
+
+  """
+  Checks for equality with the object’s `isValid` field.
+  """
+  isValid: Boolean
+
+  """
   Checks for equality with the object’s `updatedAt` field.
   """
   updatedAt: Datetime
@@ -896,6 +1018,16 @@ input RendezVousFilter {
   Filter by the object’s `endDate` field.
   """
   endDate: DatetimeFilter
+
+  """
+  Filter by the object’s `description` field.
+  """
+  description: StringFilter
+
+  """
+  Filter by the object’s `isValid` field.
+  """
+  isValid: BooleanFilter
 
   """
   Filter by the object’s `updatedAt` field.
@@ -976,6 +1108,256 @@ input DatetimeFilter {
   Greater than or equal to the specified value.
   """
   greaterThanOrEqualTo: Datetime
+}
+
+"""
+A filter to be used against String fields. All fields are combined with a logical ‘and.’
+"""
+input StringFilter {
+  """
+  Is null (if `true` is specified) or is not null (if `false` is specified).
+  """
+  isNull: Boolean
+
+  """
+  Equal to the specified value.
+  """
+  equalTo: String
+
+  """
+  Not equal to the specified value.
+  """
+  notEqualTo: String
+
+  """
+  Not equal to the specified value, treating null like an ordinary value.
+  """
+  distinctFrom: String
+
+  """
+  Equal to the specified value, treating null like an ordinary value.
+  """
+  notDistinctFrom: String
+
+  """
+  Included in the specified list.
+  """
+  in: [String!]
+
+  """
+  Not included in the specified list.
+  """
+  notIn: [String!]
+
+  """
+  Less than the specified value.
+  """
+  lessThan: String
+
+  """
+  Less than or equal to the specified value.
+  """
+  lessThanOrEqualTo: String
+
+  """
+  Greater than the specified value.
+  """
+  greaterThan: String
+
+  """
+  Greater than or equal to the specified value.
+  """
+  greaterThanOrEqualTo: String
+
+  """
+  Contains the specified string (case-sensitive).
+  """
+  includes: String
+
+  """
+  Does not contain the specified string (case-sensitive).
+  """
+  notIncludes: String
+
+  """
+  Contains the specified string (case-insensitive).
+  """
+  includesInsensitive: String
+
+  """
+  Does not contain the specified string (case-insensitive).
+  """
+  notIncludesInsensitive: String
+
+  """
+  Starts with the specified string (case-sensitive).
+  """
+  startsWith: String
+
+  """
+  Does not start with the specified string (case-sensitive).
+  """
+  notStartsWith: String
+
+  """
+  Starts with the specified string (case-insensitive).
+  """
+  startsWithInsensitive: String
+
+  """
+  Does not start with the specified string (case-insensitive).
+  """
+  notStartsWithInsensitive: String
+
+  """
+  Ends with the specified string (case-sensitive).
+  """
+  endsWith: String
+
+  """
+  Does not end with the specified string (case-sensitive).
+  """
+  notEndsWith: String
+
+  """
+  Ends with the specified string (case-insensitive).
+  """
+  endsWithInsensitive: String
+
+  """
+  Does not end with the specified string (case-insensitive).
+  """
+  notEndsWithInsensitive: String
+
+  """
+  Matches the specified pattern (case-sensitive). An underscore (_) matches any single character; a percent sign (%) matches any sequence of zero or more characters.
+  """
+  like: String
+
+  """
+  Does not match the specified pattern (case-sensitive). An underscore (_) matches any single character; a percent sign (%) matches any sequence of zero or more characters.
+  """
+  notLike: String
+
+  """
+  Matches the specified pattern (case-insensitive). An underscore (_) matches any single character; a percent sign (%) matches any sequence of zero or more characters.
+  """
+  likeInsensitive: String
+
+  """
+  Does not match the specified pattern (case-insensitive). An underscore (_) matches any single character; a percent sign (%) matches any sequence of zero or more characters.
+  """
+  notLikeInsensitive: String
+
+  """
+  Equal to the specified value (case-insensitive).
+  """
+  equalToInsensitive: String
+
+  """
+  Not equal to the specified value (case-insensitive).
+  """
+  notEqualToInsensitive: String
+
+  """
+  Not equal to the specified value, treating null like an ordinary value (case-insensitive).
+  """
+  distinctFromInsensitive: String
+
+  """
+  Equal to the specified value, treating null like an ordinary value (case-insensitive).
+  """
+  notDistinctFromInsensitive: String
+
+  """
+  Included in the specified list (case-insensitive).
+  """
+  inInsensitive: [String!]
+
+  """
+  Not included in the specified list (case-insensitive).
+  """
+  notInInsensitive: [String!]
+
+  """
+  Less than the specified value (case-insensitive).
+  """
+  lessThanInsensitive: String
+
+  """
+  Less than or equal to the specified value (case-insensitive).
+  """
+  lessThanOrEqualToInsensitive: String
+
+  """
+  Greater than the specified value (case-insensitive).
+  """
+  greaterThanInsensitive: String
+
+  """
+  Greater than or equal to the specified value (case-insensitive).
+  """
+  greaterThanOrEqualToInsensitive: String
+}
+
+"""
+A filter to be used against Boolean fields. All fields are combined with a logical ‘and.’
+"""
+input BooleanFilter {
+  """
+  Is null (if `true` is specified) or is not null (if `false` is specified).
+  """
+  isNull: Boolean
+
+  """
+  Equal to the specified value.
+  """
+  equalTo: Boolean
+
+  """
+  Not equal to the specified value.
+  """
+  notEqualTo: Boolean
+
+  """
+  Not equal to the specified value, treating null like an ordinary value.
+  """
+  distinctFrom: Boolean
+
+  """
+  Equal to the specified value, treating null like an ordinary value.
+  """
+  notDistinctFrom: Boolean
+
+  """
+  Included in the specified list.
+  """
+  in: [Boolean!]
+
+  """
+  Not included in the specified list.
+  """
+  notIn: [Boolean!]
+
+  """
+  Less than the specified value.
+  """
+  lessThan: Boolean
+
+  """
+  Less than or equal to the specified value.
+  """
+  lessThanOrEqualTo: Boolean
+
+  """
+  Greater than the specified value.
+  """
+  greaterThan: Boolean
+
+  """
+  Greater than or equal to the specified value.
+  """
+  greaterThanOrEqualTo: Boolean
 }
 
 type Biometrique implements Node {
@@ -1161,66 +1543,6 @@ input BiometriqueFilter {
   Negates the expression.
   """
   not: BiometriqueFilter
-}
-
-"""
-A filter to be used against Boolean fields. All fields are combined with a logical ‘and.’
-"""
-input BooleanFilter {
-  """
-  Is null (if `true` is specified) or is not null (if `false` is specified).
-  """
-  isNull: Boolean
-
-  """
-  Equal to the specified value.
-  """
-  equalTo: Boolean
-
-  """
-  Not equal to the specified value.
-  """
-  notEqualTo: Boolean
-
-  """
-  Not equal to the specified value, treating null like an ordinary value.
-  """
-  distinctFrom: Boolean
-
-  """
-  Equal to the specified value, treating null like an ordinary value.
-  """
-  notDistinctFrom: Boolean
-
-  """
-  Included in the specified list.
-  """
-  in: [Boolean!]
-
-  """
-  Not included in the specified list.
-  """
-  notIn: [Boolean!]
-
-  """
-  Less than the specified value.
-  """
-  lessThan: Boolean
-
-  """
-  Less than or equal to the specified value.
-  """
-  lessThanOrEqualTo: Boolean
-
-  """
-  Greater than the specified value.
-  """
-  greaterThan: Boolean
-
-  """
-  Greater than or equal to the specified value.
-  """
-  greaterThanOrEqualTo: Boolean
 }
 
 type AntecedentsPersonnelle implements Node {
@@ -1585,196 +1907,6 @@ input AntecedentsPersonnelleFilter {
 }
 
 """
-A filter to be used against String fields. All fields are combined with a logical ‘and.’
-"""
-input StringFilter {
-  """
-  Is null (if `true` is specified) or is not null (if `false` is specified).
-  """
-  isNull: Boolean
-
-  """
-  Equal to the specified value.
-  """
-  equalTo: String
-
-  """
-  Not equal to the specified value.
-  """
-  notEqualTo: String
-
-  """
-  Not equal to the specified value, treating null like an ordinary value.
-  """
-  distinctFrom: String
-
-  """
-  Equal to the specified value, treating null like an ordinary value.
-  """
-  notDistinctFrom: String
-
-  """
-  Included in the specified list.
-  """
-  in: [String!]
-
-  """
-  Not included in the specified list.
-  """
-  notIn: [String!]
-
-  """
-  Less than the specified value.
-  """
-  lessThan: String
-
-  """
-  Less than or equal to the specified value.
-  """
-  lessThanOrEqualTo: String
-
-  """
-  Greater than the specified value.
-  """
-  greaterThan: String
-
-  """
-  Greater than or equal to the specified value.
-  """
-  greaterThanOrEqualTo: String
-
-  """
-  Contains the specified string (case-sensitive).
-  """
-  includes: String
-
-  """
-  Does not contain the specified string (case-sensitive).
-  """
-  notIncludes: String
-
-  """
-  Contains the specified string (case-insensitive).
-  """
-  includesInsensitive: String
-
-  """
-  Does not contain the specified string (case-insensitive).
-  """
-  notIncludesInsensitive: String
-
-  """
-  Starts with the specified string (case-sensitive).
-  """
-  startsWith: String
-
-  """
-  Does not start with the specified string (case-sensitive).
-  """
-  notStartsWith: String
-
-  """
-  Starts with the specified string (case-insensitive).
-  """
-  startsWithInsensitive: String
-
-  """
-  Does not start with the specified string (case-insensitive).
-  """
-  notStartsWithInsensitive: String
-
-  """
-  Ends with the specified string (case-sensitive).
-  """
-  endsWith: String
-
-  """
-  Does not end with the specified string (case-sensitive).
-  """
-  notEndsWith: String
-
-  """
-  Ends with the specified string (case-insensitive).
-  """
-  endsWithInsensitive: String
-
-  """
-  Does not end with the specified string (case-insensitive).
-  """
-  notEndsWithInsensitive: String
-
-  """
-  Matches the specified pattern (case-sensitive). An underscore (_) matches any single character; a percent sign (%) matches any sequence of zero or more characters.
-  """
-  like: String
-
-  """
-  Does not match the specified pattern (case-sensitive). An underscore (_) matches any single character; a percent sign (%) matches any sequence of zero or more characters.
-  """
-  notLike: String
-
-  """
-  Matches the specified pattern (case-insensitive). An underscore (_) matches any single character; a percent sign (%) matches any sequence of zero or more characters.
-  """
-  likeInsensitive: String
-
-  """
-  Does not match the specified pattern (case-insensitive). An underscore (_) matches any single character; a percent sign (%) matches any sequence of zero or more characters.
-  """
-  notLikeInsensitive: String
-
-  """
-  Equal to the specified value (case-insensitive).
-  """
-  equalToInsensitive: String
-
-  """
-  Not equal to the specified value (case-insensitive).
-  """
-  notEqualToInsensitive: String
-
-  """
-  Not equal to the specified value, treating null like an ordinary value (case-insensitive).
-  """
-  distinctFromInsensitive: String
-
-  """
-  Equal to the specified value, treating null like an ordinary value (case-insensitive).
-  """
-  notDistinctFromInsensitive: String
-
-  """
-  Included in the specified list (case-insensitive).
-  """
-  inInsensitive: [String!]
-
-  """
-  Not included in the specified list (case-insensitive).
-  """
-  notInInsensitive: [String!]
-
-  """
-  Less than the specified value (case-insensitive).
-  """
-  lessThanInsensitive: String
-
-  """
-  Less than or equal to the specified value (case-insensitive).
-  """
-  lessThanOrEqualToInsensitive: String
-
-  """
-  Greater than the specified value (case-insensitive).
-  """
-  greaterThanInsensitive: String
-
-  """
-  Greater than or equal to the specified value (case-insensitive).
-  """
-  greaterThanOrEqualToInsensitive: String
-}
-
-"""
 Methods to use when ordering `AntecedentsMedicoChirugicaux`.
 """
 enum AntecedentsMedicoChirugicauxesOrderBy {
@@ -2049,6 +2181,16 @@ type ExamenMedical implements Node {
   dossierMedicalByDossierMedicalId: DossierMedical
 
   """
+  Reads a single `RapportMedical` that is related to this `ExamenMedical`.
+  """
+  rapportMedicalById: RapportMedical
+
+  """
+  Reads and enables pagination through a set of `RapportMedical`.
+  """
+  rapportMedicalsById("Only read the first `n` values of the set." first: Int, "Only read the last `n` values of the set." last: Int, "Skip the first `n` values from our `after` cursor, an alternative to cursor\nbased pagination. May not be used with `last`." offset: Int, "Read all values in the set before (above) this cursor." before: Cursor, "Read all values in the set after (below) this cursor." after: Cursor, "The method to use when ordering `RapportMedical`." orderBy: [RapportMedicalsOrderBy!] = [PRIMARY_KEY_ASC], "A condition to be used in determining which values should be returned by the collection." condition: RapportMedicalCondition, "A filter to be used in determining which values should be returned by the collection." filter: RapportMedicalFilter): RapportMedicalsConnection! @deprecated(reason: "Please use rapportMedicalById instead")
+
+  """
   Reads a single `PeauEtMuqueus` that is related to this `ExamenMedical`.
   """
   peauEtMuqueusById: PeauEtMuqueus
@@ -2127,6 +2269,203 @@ type ExamenMedical implements Node {
   Reads and enables pagination through a set of `GenitoUrinaire`.
   """
   genitoUrinairesById("Only read the first `n` values of the set." first: Int, "Only read the last `n` values of the set." last: Int, "Skip the first `n` values from our `after` cursor, an alternative to cursor\nbased pagination. May not be used with `last`." offset: Int, "Read all values in the set before (above) this cursor." before: Cursor, "Read all values in the set after (below) this cursor." after: Cursor, "The method to use when ordering `GenitoUrinaire`." orderBy: [GenitoUrinairesOrderBy!] = [PRIMARY_KEY_ASC], "A condition to be used in determining which values should be returned by the collection." condition: GenitoUrinaireCondition, "A filter to be used in determining which values should be returned by the collection." filter: GenitoUrinaireFilter): GenitoUrinairesConnection! @deprecated(reason: "Please use genitoUrinaireById instead")
+
+  """
+  Reads a single `NeurologiquePsychisme` that is related to this `ExamenMedical`.
+  """
+  neurologiquePsychismeById: NeurologiquePsychisme
+
+  """
+  Reads and enables pagination through a set of `NeurologiquePsychisme`.
+  """
+  neurologiquePsychismesById("Only read the first `n` values of the set." first: Int, "Only read the last `n` values of the set." last: Int, "Skip the first `n` values from our `after` cursor, an alternative to cursor\nbased pagination. May not be used with `last`." offset: Int, "Read all values in the set before (above) this cursor." before: Cursor, "Read all values in the set after (below) this cursor." after: Cursor, "The method to use when ordering `NeurologiquePsychisme`." orderBy: [NeurologiquePsychismesOrderBy!] = [PRIMARY_KEY_ASC], "A condition to be used in determining which values should be returned by the collection." condition: NeurologiquePsychismeCondition, "A filter to be used in determining which values should be returned by the collection." filter: NeurologiquePsychismeFilter): NeurologiquePsychismesConnection! @deprecated(reason: "Please use neurologiquePsychismeById instead")
+
+  """
+  Reads a single `HematologieAnglionnaire` that is related to this `ExamenMedical`.
+  """
+  hematologieAnglionnaireById: HematologieAnglionnaire
+
+  """
+  Reads and enables pagination through a set of `HematologieAnglionnaire`.
+  """
+  hematologieAnglionnairesById("Only read the first `n` values of the set." first: Int, "Only read the last `n` values of the set." last: Int, "Skip the first `n` values from our `after` cursor, an alternative to cursor\nbased pagination. May not be used with `last`." offset: Int, "Read all values in the set before (above) this cursor." before: Cursor, "Read all values in the set after (below) this cursor." after: Cursor, "The method to use when ordering `HematologieAnglionnaire`." orderBy: [HematologieAnglionnairesOrderBy!] = [PRIMARY_KEY_ASC], "A condition to be used in determining which values should be returned by the collection." condition: HematologieAnglionnaireCondition, "A filter to be used in determining which values should be returned by the collection." filter: HematologieAnglionnaireFilter): HematologieAnglionnairesConnection! @deprecated(reason: "Please use hematologieAnglionnaireById instead")
+
+  """
+  Reads a single `Endocrinologie` that is related to this `ExamenMedical`.
+  """
+  endocrinologieById: Endocrinologie
+
+  """
+  Reads and enables pagination through a set of `Endocrinologie`.
+  """
+  endocrinologiesById("Only read the first `n` values of the set." first: Int, "Only read the last `n` values of the set." last: Int, "Skip the first `n` values from our `after` cursor, an alternative to cursor\nbased pagination. May not be used with `last`." offset: Int, "Read all values in the set before (above) this cursor." before: Cursor, "Read all values in the set after (below) this cursor." after: Cursor, "The method to use when ordering `Endocrinologie`." orderBy: [EndocrinologiesOrderBy!] = [PRIMARY_KEY_ASC], "A condition to be used in determining which values should be returned by the collection." condition: EndocrinologieCondition, "A filter to be used in determining which values should be returned by the collection." filter: EndocrinologieFilter): EndocrinologiesConnection! @deprecated(reason: "Please use endocrinologieById instead")
+
+  """
+  Reads a single `ProfilePsychologique` that is related to this `ExamenMedical`.
+  """
+  profilePsychologiqueById: ProfilePsychologique
+
+  """
+  Reads and enables pagination through a set of `ProfilePsychologique`.
+  """
+  profilePsychologiquesById("Only read the first `n` values of the set." first: Int, "Only read the last `n` values of the set." last: Int, "Skip the first `n` values from our `after` cursor, an alternative to cursor\nbased pagination. May not be used with `last`." offset: Int, "Read all values in the set before (above) this cursor." before: Cursor, "Read all values in the set after (below) this cursor." after: Cursor, "The method to use when ordering `ProfilePsychologique`." orderBy: [ProfilePsychologiquesOrderBy!] = [PRIMARY_KEY_ASC], "A condition to be used in determining which values should be returned by the collection." condition: ProfilePsychologiqueCondition, "A filter to be used in determining which values should be returned by the collection." filter: ProfilePsychologiqueFilter): ProfilePsychologiquesConnection! @deprecated(reason: "Please use profilePsychologiqueById instead")
+
+  """
+  Reads a single `ExamensComplementaire` that is related to this `ExamenMedical`.
+  """
+  examensComplementaireById: ExamensComplementaire
+
+  """
+  Reads and enables pagination through a set of `ExamensComplementaire`.
+  """
+  examensComplementairesById("Only read the first `n` values of the set." first: Int, "Only read the last `n` values of the set." last: Int, "Skip the first `n` values from our `after` cursor, an alternative to cursor\nbased pagination. May not be used with `last`." offset: Int, "Read all values in the set before (above) this cursor." before: Cursor, "Read all values in the set after (below) this cursor." after: Cursor, "The method to use when ordering `ExamensComplementaire`." orderBy: [ExamensComplementairesOrderBy!] = [PRIMARY_KEY_ASC], "A condition to be used in determining which values should be returned by the collection." condition: ExamensComplementaireCondition, "A filter to be used in determining which values should be returned by the collection." filter: ExamensComplementaireFilter): ExamensComplementairesConnection! @deprecated(reason: "Please use examensComplementaireById instead")
+
+  """
+  Reads a single `Orientation` that is related to this `ExamenMedical`.
+  """
+  orientationById: Orientation
+
+  """
+  Reads and enables pagination through a set of `Orientation`.
+  """
+  orientationsById("Only read the first `n` values of the set." first: Int, "Only read the last `n` values of the set." last: Int, "Skip the first `n` values from our `after` cursor, an alternative to cursor\nbased pagination. May not be used with `last`." offset: Int, "Read all values in the set before (above) this cursor." before: Cursor, "Read all values in the set after (below) this cursor." after: Cursor, "The method to use when ordering `Orientation`." orderBy: [OrientationsOrderBy!] = [PRIMARY_KEY_ASC], "A condition to be used in determining which values should be returned by the collection." condition: OrientationCondition, "A filter to be used in determining which values should be returned by the collection." filter: OrientationFilter): OrientationsConnection! @deprecated(reason: "Please use orientationById instead")
+}
+
+type RapportMedical implements Node {
+  """
+  A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  """
+  nodeId: ID!
+
+  id: UUID!
+
+  notes: [String]
+
+  updatedAt: Datetime!
+
+  """
+  Reads a single `ExamenMedical` that is related to this `RapportMedical`.
+  """
+  examenMedicalById: ExamenMedical
+}
+
+"""
+A connection to a list of `RapportMedical` values.
+"""
+type RapportMedicalsConnection {
+  """
+  A list of `RapportMedical` objects.
+  """
+  nodes: [RapportMedical]!
+
+  """
+  A list of edges which contains the `RapportMedical` and cursor to aid in pagination.
+  """
+  edges: [RapportMedicalsEdge!]!
+
+  """
+  Information to aid in pagination.
+  """
+  pageInfo: PageInfo!
+
+  """
+  The count of *all* `RapportMedical` you could get from the connection.
+  """
+  totalCount: Int!
+}
+
+"""
+A `RapportMedical` edge in the connection.
+"""
+type RapportMedicalsEdge {
+  """
+  A cursor for use in pagination.
+  """
+  cursor: Cursor
+
+  """
+  The `RapportMedical` at the end of the edge.
+  """
+  node: RapportMedical
+}
+
+"""
+Methods to use when ordering `RapportMedical`.
+"""
+enum RapportMedicalsOrderBy {
+  NATURAL
+
+  ID_ASC
+
+  ID_DESC
+
+  NOTES_ASC
+
+  NOTES_DESC
+
+  UPDATED_AT_ASC
+
+  UPDATED_AT_DESC
+
+  PRIMARY_KEY_ASC
+
+  PRIMARY_KEY_DESC
+}
+
+"""
+A condition to be used against `RapportMedical` object types. All fields are
+tested for equality and combined with a logical ‘and.’
+"""
+input RapportMedicalCondition {
+  """
+  Checks for equality with the object’s `id` field.
+  """
+  id: UUID
+
+  """
+  Checks for equality with the object’s `notes` field.
+  """
+  notes: [String]
+
+  """
+  Checks for equality with the object’s `updatedAt` field.
+  """
+  updatedAt: Datetime
+}
+
+"""
+A filter to be used against `RapportMedical` object types. All fields are combined with a logical ‘and.’
+"""
+input RapportMedicalFilter {
+  """
+  Filter by the object’s `id` field.
+  """
+  id: UUIDFilter
+
+  """
+  Filter by the object’s `notes` field.
+  """
+  notes: StringListFilter
+
+  """
+  Filter by the object’s `updatedAt` field.
+  """
+  updatedAt: DatetimeFilter
+
+  """
+  Checks for all expressions in this list.
+  """
+  and: [RapportMedicalFilter!]
+
+  """
+  Checks for any expressions in this list.
+  """
+  or: [RapportMedicalFilter!]
+
+  """
+  Negates the expression.
+  """
+  not: RapportMedicalFilter
 }
 
 type PeauEtMuqueus implements Node {
@@ -2675,7 +3014,7 @@ type Locomoteur implements Node {
 
   id: UUID!
 
-  affectionsCutanees: String
+  notes: [String]
 
   updatedAt: Datetime!
 
@@ -2735,9 +3074,9 @@ enum LocomoteursOrderBy {
 
   ID_DESC
 
-  AFFECTIONS_CUTANEES_ASC
+  NOTES_ASC
 
-  AFFECTIONS_CUTANEES_DESC
+  NOTES_DESC
 
   UPDATED_AT_ASC
 
@@ -2759,9 +3098,9 @@ input LocomoteurCondition {
   id: UUID
 
   """
-  Checks for equality with the object’s `affectionsCutanees` field.
+  Checks for equality with the object’s `notes` field.
   """
-  affectionsCutanees: String
+  notes: [String]
 
   """
   Checks for equality with the object’s `updatedAt` field.
@@ -2779,9 +3118,9 @@ input LocomoteurFilter {
   id: UUIDFilter
 
   """
-  Filter by the object’s `affectionsCutanees` field.
+  Filter by the object’s `notes` field.
   """
-  affectionsCutanees: StringFilter
+  notes: StringListFilter
 
   """
   Filter by the object’s `updatedAt` field.
@@ -2949,7 +3288,7 @@ type CardioVasculaire implements Node {
 
   id: UUID!
 
-  affectionsCutanees: String
+  notes: [String]
 
   updatedAt: Datetime!
 
@@ -3009,9 +3348,9 @@ enum CardioVasculairesOrderBy {
 
   ID_DESC
 
-  AFFECTIONS_CUTANEES_ASC
+  NOTES_ASC
 
-  AFFECTIONS_CUTANEES_DESC
+  NOTES_DESC
 
   UPDATED_AT_ASC
 
@@ -3033,9 +3372,9 @@ input CardioVasculaireCondition {
   id: UUID
 
   """
-  Checks for equality with the object’s `affectionsCutanees` field.
+  Checks for equality with the object’s `notes` field.
   """
-  affectionsCutanees: String
+  notes: [String]
 
   """
   Checks for equality with the object’s `updatedAt` field.
@@ -3053,9 +3392,9 @@ input CardioVasculaireFilter {
   id: UUIDFilter
 
   """
-  Filter by the object’s `affectionsCutanees` field.
+  Filter by the object’s `notes` field.
   """
-  affectionsCutanees: StringFilter
+  notes: StringListFilter
 
   """
   Filter by the object’s `updatedAt` field.
@@ -3086,7 +3425,7 @@ type Digestif implements Node {
 
   id: UUID!
 
-  affectionsCutanees: String
+  notes: [String]
 
   updatedAt: Datetime!
 
@@ -3146,9 +3485,9 @@ enum DigestifsOrderBy {
 
   ID_DESC
 
-  AFFECTIONS_CUTANEES_ASC
+  NOTES_ASC
 
-  AFFECTIONS_CUTANEES_DESC
+  NOTES_DESC
 
   UPDATED_AT_ASC
 
@@ -3170,9 +3509,9 @@ input DigestifCondition {
   id: UUID
 
   """
-  Checks for equality with the object’s `affectionsCutanees` field.
+  Checks for equality with the object’s `notes` field.
   """
-  affectionsCutanees: String
+  notes: [String]
 
   """
   Checks for equality with the object’s `updatedAt` field.
@@ -3190,9 +3529,9 @@ input DigestifFilter {
   id: UUIDFilter
 
   """
-  Filter by the object’s `affectionsCutanees` field.
+  Filter by the object’s `notes` field.
   """
-  affectionsCutanees: StringFilter
+  notes: StringListFilter
 
   """
   Filter by the object’s `updatedAt` field.
@@ -3223,7 +3562,7 @@ type GenitoUrinaire implements Node {
 
   id: UUID!
 
-  affectionsCutanees: String
+  notes: [String]
 
   updatedAt: Datetime!
 
@@ -3283,9 +3622,9 @@ enum GenitoUrinairesOrderBy {
 
   ID_DESC
 
-  AFFECTIONS_CUTANEES_ASC
+  NOTES_ASC
 
-  AFFECTIONS_CUTANEES_DESC
+  NOTES_DESC
 
   UPDATED_AT_ASC
 
@@ -3307,9 +3646,9 @@ input GenitoUrinaireCondition {
   id: UUID
 
   """
-  Checks for equality with the object’s `affectionsCutanees` field.
+  Checks for equality with the object’s `notes` field.
   """
-  affectionsCutanees: String
+  notes: [String]
 
   """
   Checks for equality with the object’s `updatedAt` field.
@@ -3327,9 +3666,9 @@ input GenitoUrinaireFilter {
   id: UUIDFilter
 
   """
-  Filter by the object’s `affectionsCutanees` field.
+  Filter by the object’s `notes` field.
   """
-  affectionsCutanees: StringFilter
+  notes: StringListFilter
 
   """
   Filter by the object’s `updatedAt` field.
@@ -3350,6 +3689,828 @@ input GenitoUrinaireFilter {
   Negates the expression.
   """
   not: GenitoUrinaireFilter
+}
+
+type NeurologiquePsychisme implements Node {
+  """
+  A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  """
+  nodeId: ID!
+
+  id: UUID!
+
+  notes: [String]
+
+  updatedAt: Datetime!
+
+  """
+  Reads a single `ExamenMedical` that is related to this `NeurologiquePsychisme`.
+  """
+  examenMedicalById: ExamenMedical
+}
+
+"""
+A connection to a list of `NeurologiquePsychisme` values.
+"""
+type NeurologiquePsychismesConnection {
+  """
+  A list of `NeurologiquePsychisme` objects.
+  """
+  nodes: [NeurologiquePsychisme]!
+
+  """
+  A list of edges which contains the `NeurologiquePsychisme` and cursor to aid in pagination.
+  """
+  edges: [NeurologiquePsychismesEdge!]!
+
+  """
+  Information to aid in pagination.
+  """
+  pageInfo: PageInfo!
+
+  """
+  The count of *all* `NeurologiquePsychisme` you could get from the connection.
+  """
+  totalCount: Int!
+}
+
+"""
+A `NeurologiquePsychisme` edge in the connection.
+"""
+type NeurologiquePsychismesEdge {
+  """
+  A cursor for use in pagination.
+  """
+  cursor: Cursor
+
+  """
+  The `NeurologiquePsychisme` at the end of the edge.
+  """
+  node: NeurologiquePsychisme
+}
+
+"""
+Methods to use when ordering `NeurologiquePsychisme`.
+"""
+enum NeurologiquePsychismesOrderBy {
+  NATURAL
+
+  ID_ASC
+
+  ID_DESC
+
+  NOTES_ASC
+
+  NOTES_DESC
+
+  UPDATED_AT_ASC
+
+  UPDATED_AT_DESC
+
+  PRIMARY_KEY_ASC
+
+  PRIMARY_KEY_DESC
+}
+
+"""
+A condition to be used against `NeurologiquePsychisme` object types. All fields
+are tested for equality and combined with a logical ‘and.’
+"""
+input NeurologiquePsychismeCondition {
+  """
+  Checks for equality with the object’s `id` field.
+  """
+  id: UUID
+
+  """
+  Checks for equality with the object’s `notes` field.
+  """
+  notes: [String]
+
+  """
+  Checks for equality with the object’s `updatedAt` field.
+  """
+  updatedAt: Datetime
+}
+
+"""
+A filter to be used against `NeurologiquePsychisme` object types. All fields are combined with a logical ‘and.’
+"""
+input NeurologiquePsychismeFilter {
+  """
+  Filter by the object’s `id` field.
+  """
+  id: UUIDFilter
+
+  """
+  Filter by the object’s `notes` field.
+  """
+  notes: StringListFilter
+
+  """
+  Filter by the object’s `updatedAt` field.
+  """
+  updatedAt: DatetimeFilter
+
+  """
+  Checks for all expressions in this list.
+  """
+  and: [NeurologiquePsychismeFilter!]
+
+  """
+  Checks for any expressions in this list.
+  """
+  or: [NeurologiquePsychismeFilter!]
+
+  """
+  Negates the expression.
+  """
+  not: NeurologiquePsychismeFilter
+}
+
+type HematologieAnglionnaire implements Node {
+  """
+  A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  """
+  nodeId: ID!
+
+  id: UUID!
+
+  notes: [String]
+
+  updatedAt: Datetime!
+
+  """
+  Reads a single `ExamenMedical` that is related to this `HematologieAnglionnaire`.
+  """
+  examenMedicalById: ExamenMedical
+}
+
+"""
+A connection to a list of `HematologieAnglionnaire` values.
+"""
+type HematologieAnglionnairesConnection {
+  """
+  A list of `HematologieAnglionnaire` objects.
+  """
+  nodes: [HematologieAnglionnaire]!
+
+  """
+  A list of edges which contains the `HematologieAnglionnaire` and cursor to aid in pagination.
+  """
+  edges: [HematologieAnglionnairesEdge!]!
+
+  """
+  Information to aid in pagination.
+  """
+  pageInfo: PageInfo!
+
+  """
+  The count of *all* `HematologieAnglionnaire` you could get from the connection.
+  """
+  totalCount: Int!
+}
+
+"""
+A `HematologieAnglionnaire` edge in the connection.
+"""
+type HematologieAnglionnairesEdge {
+  """
+  A cursor for use in pagination.
+  """
+  cursor: Cursor
+
+  """
+  The `HematologieAnglionnaire` at the end of the edge.
+  """
+  node: HematologieAnglionnaire
+}
+
+"""
+Methods to use when ordering `HematologieAnglionnaire`.
+"""
+enum HematologieAnglionnairesOrderBy {
+  NATURAL
+
+  ID_ASC
+
+  ID_DESC
+
+  NOTES_ASC
+
+  NOTES_DESC
+
+  UPDATED_AT_ASC
+
+  UPDATED_AT_DESC
+
+  PRIMARY_KEY_ASC
+
+  PRIMARY_KEY_DESC
+}
+
+"""
+A condition to be used against `HematologieAnglionnaire` object types. All
+fields are tested for equality and combined with a logical ‘and.’
+"""
+input HematologieAnglionnaireCondition {
+  """
+  Checks for equality with the object’s `id` field.
+  """
+  id: UUID
+
+  """
+  Checks for equality with the object’s `notes` field.
+  """
+  notes: [String]
+
+  """
+  Checks for equality with the object’s `updatedAt` field.
+  """
+  updatedAt: Datetime
+}
+
+"""
+A filter to be used against `HematologieAnglionnaire` object types. All fields are combined with a logical ‘and.’
+"""
+input HematologieAnglionnaireFilter {
+  """
+  Filter by the object’s `id` field.
+  """
+  id: UUIDFilter
+
+  """
+  Filter by the object’s `notes` field.
+  """
+  notes: StringListFilter
+
+  """
+  Filter by the object’s `updatedAt` field.
+  """
+  updatedAt: DatetimeFilter
+
+  """
+  Checks for all expressions in this list.
+  """
+  and: [HematologieAnglionnaireFilter!]
+
+  """
+  Checks for any expressions in this list.
+  """
+  or: [HematologieAnglionnaireFilter!]
+
+  """
+  Negates the expression.
+  """
+  not: HematologieAnglionnaireFilter
+}
+
+type Endocrinologie implements Node {
+  """
+  A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  """
+  nodeId: ID!
+
+  id: UUID!
+
+  notes: [String]
+
+  updatedAt: Datetime!
+
+  """
+  Reads a single `ExamenMedical` that is related to this `Endocrinologie`.
+  """
+  examenMedicalById: ExamenMedical
+}
+
+"""
+A connection to a list of `Endocrinologie` values.
+"""
+type EndocrinologiesConnection {
+  """
+  A list of `Endocrinologie` objects.
+  """
+  nodes: [Endocrinologie]!
+
+  """
+  A list of edges which contains the `Endocrinologie` and cursor to aid in pagination.
+  """
+  edges: [EndocrinologiesEdge!]!
+
+  """
+  Information to aid in pagination.
+  """
+  pageInfo: PageInfo!
+
+  """
+  The count of *all* `Endocrinologie` you could get from the connection.
+  """
+  totalCount: Int!
+}
+
+"""
+A `Endocrinologie` edge in the connection.
+"""
+type EndocrinologiesEdge {
+  """
+  A cursor for use in pagination.
+  """
+  cursor: Cursor
+
+  """
+  The `Endocrinologie` at the end of the edge.
+  """
+  node: Endocrinologie
+}
+
+"""
+Methods to use when ordering `Endocrinologie`.
+"""
+enum EndocrinologiesOrderBy {
+  NATURAL
+
+  ID_ASC
+
+  ID_DESC
+
+  NOTES_ASC
+
+  NOTES_DESC
+
+  UPDATED_AT_ASC
+
+  UPDATED_AT_DESC
+
+  PRIMARY_KEY_ASC
+
+  PRIMARY_KEY_DESC
+}
+
+"""
+A condition to be used against `Endocrinologie` object types. All fields are
+tested for equality and combined with a logical ‘and.’
+"""
+input EndocrinologieCondition {
+  """
+  Checks for equality with the object’s `id` field.
+  """
+  id: UUID
+
+  """
+  Checks for equality with the object’s `notes` field.
+  """
+  notes: [String]
+
+  """
+  Checks for equality with the object’s `updatedAt` field.
+  """
+  updatedAt: Datetime
+}
+
+"""
+A filter to be used against `Endocrinologie` object types. All fields are combined with a logical ‘and.’
+"""
+input EndocrinologieFilter {
+  """
+  Filter by the object’s `id` field.
+  """
+  id: UUIDFilter
+
+  """
+  Filter by the object’s `notes` field.
+  """
+  notes: StringListFilter
+
+  """
+  Filter by the object’s `updatedAt` field.
+  """
+  updatedAt: DatetimeFilter
+
+  """
+  Checks for all expressions in this list.
+  """
+  and: [EndocrinologieFilter!]
+
+  """
+  Checks for any expressions in this list.
+  """
+  or: [EndocrinologieFilter!]
+
+  """
+  Negates the expression.
+  """
+  not: EndocrinologieFilter
+}
+
+type ProfilePsychologique implements Node {
+  """
+  A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  """
+  nodeId: ID!
+
+  id: UUID!
+
+  notes: [String]
+
+  updatedAt: Datetime!
+
+  """
+  Reads a single `ExamenMedical` that is related to this `ProfilePsychologique`.
+  """
+  examenMedicalById: ExamenMedical
+}
+
+"""
+A connection to a list of `ProfilePsychologique` values.
+"""
+type ProfilePsychologiquesConnection {
+  """
+  A list of `ProfilePsychologique` objects.
+  """
+  nodes: [ProfilePsychologique]!
+
+  """
+  A list of edges which contains the `ProfilePsychologique` and cursor to aid in pagination.
+  """
+  edges: [ProfilePsychologiquesEdge!]!
+
+  """
+  Information to aid in pagination.
+  """
+  pageInfo: PageInfo!
+
+  """
+  The count of *all* `ProfilePsychologique` you could get from the connection.
+  """
+  totalCount: Int!
+}
+
+"""
+A `ProfilePsychologique` edge in the connection.
+"""
+type ProfilePsychologiquesEdge {
+  """
+  A cursor for use in pagination.
+  """
+  cursor: Cursor
+
+  """
+  The `ProfilePsychologique` at the end of the edge.
+  """
+  node: ProfilePsychologique
+}
+
+"""
+Methods to use when ordering `ProfilePsychologique`.
+"""
+enum ProfilePsychologiquesOrderBy {
+  NATURAL
+
+  ID_ASC
+
+  ID_DESC
+
+  NOTES_ASC
+
+  NOTES_DESC
+
+  UPDATED_AT_ASC
+
+  UPDATED_AT_DESC
+
+  PRIMARY_KEY_ASC
+
+  PRIMARY_KEY_DESC
+}
+
+"""
+A condition to be used against `ProfilePsychologique` object types. All fields
+are tested for equality and combined with a logical ‘and.’
+"""
+input ProfilePsychologiqueCondition {
+  """
+  Checks for equality with the object’s `id` field.
+  """
+  id: UUID
+
+  """
+  Checks for equality with the object’s `notes` field.
+  """
+  notes: [String]
+
+  """
+  Checks for equality with the object’s `updatedAt` field.
+  """
+  updatedAt: Datetime
+}
+
+"""
+A filter to be used against `ProfilePsychologique` object types. All fields are combined with a logical ‘and.’
+"""
+input ProfilePsychologiqueFilter {
+  """
+  Filter by the object’s `id` field.
+  """
+  id: UUIDFilter
+
+  """
+  Filter by the object’s `notes` field.
+  """
+  notes: StringListFilter
+
+  """
+  Filter by the object’s `updatedAt` field.
+  """
+  updatedAt: DatetimeFilter
+
+  """
+  Checks for all expressions in this list.
+  """
+  and: [ProfilePsychologiqueFilter!]
+
+  """
+  Checks for any expressions in this list.
+  """
+  or: [ProfilePsychologiqueFilter!]
+
+  """
+  Negates the expression.
+  """
+  not: ProfilePsychologiqueFilter
+}
+
+type ExamensComplementaire implements Node {
+  """
+  A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  """
+  nodeId: ID!
+
+  id: UUID!
+
+  notes: [String]
+
+  updatedAt: Datetime!
+
+  """
+  Reads a single `ExamenMedical` that is related to this `ExamensComplementaire`.
+  """
+  examenMedicalById: ExamenMedical
+}
+
+"""
+A connection to a list of `ExamensComplementaire` values.
+"""
+type ExamensComplementairesConnection {
+  """
+  A list of `ExamensComplementaire` objects.
+  """
+  nodes: [ExamensComplementaire]!
+
+  """
+  A list of edges which contains the `ExamensComplementaire` and cursor to aid in pagination.
+  """
+  edges: [ExamensComplementairesEdge!]!
+
+  """
+  Information to aid in pagination.
+  """
+  pageInfo: PageInfo!
+
+  """
+  The count of *all* `ExamensComplementaire` you could get from the connection.
+  """
+  totalCount: Int!
+}
+
+"""
+A `ExamensComplementaire` edge in the connection.
+"""
+type ExamensComplementairesEdge {
+  """
+  A cursor for use in pagination.
+  """
+  cursor: Cursor
+
+  """
+  The `ExamensComplementaire` at the end of the edge.
+  """
+  node: ExamensComplementaire
+}
+
+"""
+Methods to use when ordering `ExamensComplementaire`.
+"""
+enum ExamensComplementairesOrderBy {
+  NATURAL
+
+  ID_ASC
+
+  ID_DESC
+
+  NOTES_ASC
+
+  NOTES_DESC
+
+  UPDATED_AT_ASC
+
+  UPDATED_AT_DESC
+
+  PRIMARY_KEY_ASC
+
+  PRIMARY_KEY_DESC
+}
+
+"""
+A condition to be used against `ExamensComplementaire` object types. All fields
+are tested for equality and combined with a logical ‘and.’
+"""
+input ExamensComplementaireCondition {
+  """
+  Checks for equality with the object’s `id` field.
+  """
+  id: UUID
+
+  """
+  Checks for equality with the object’s `notes` field.
+  """
+  notes: [String]
+
+  """
+  Checks for equality with the object’s `updatedAt` field.
+  """
+  updatedAt: Datetime
+}
+
+"""
+A filter to be used against `ExamensComplementaire` object types. All fields are combined with a logical ‘and.’
+"""
+input ExamensComplementaireFilter {
+  """
+  Filter by the object’s `id` field.
+  """
+  id: UUIDFilter
+
+  """
+  Filter by the object’s `notes` field.
+  """
+  notes: StringListFilter
+
+  """
+  Filter by the object’s `updatedAt` field.
+  """
+  updatedAt: DatetimeFilter
+
+  """
+  Checks for all expressions in this list.
+  """
+  and: [ExamensComplementaireFilter!]
+
+  """
+  Checks for any expressions in this list.
+  """
+  or: [ExamensComplementaireFilter!]
+
+  """
+  Negates the expression.
+  """
+  not: ExamensComplementaireFilter
+}
+
+type Orientation implements Node {
+  """
+  A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  """
+  nodeId: ID!
+
+  id: UUID!
+
+  notes: [String]
+
+  updatedAt: Datetime!
+
+  """
+  Reads a single `ExamenMedical` that is related to this `Orientation`.
+  """
+  examenMedicalById: ExamenMedical
+}
+
+"""
+A connection to a list of `Orientation` values.
+"""
+type OrientationsConnection {
+  """
+  A list of `Orientation` objects.
+  """
+  nodes: [Orientation]!
+
+  """
+  A list of edges which contains the `Orientation` and cursor to aid in pagination.
+  """
+  edges: [OrientationsEdge!]!
+
+  """
+  Information to aid in pagination.
+  """
+  pageInfo: PageInfo!
+
+  """
+  The count of *all* `Orientation` you could get from the connection.
+  """
+  totalCount: Int!
+}
+
+"""
+A `Orientation` edge in the connection.
+"""
+type OrientationsEdge {
+  """
+  A cursor for use in pagination.
+  """
+  cursor: Cursor
+
+  """
+  The `Orientation` at the end of the edge.
+  """
+  node: Orientation
+}
+
+"""
+Methods to use when ordering `Orientation`.
+"""
+enum OrientationsOrderBy {
+  NATURAL
+
+  ID_ASC
+
+  ID_DESC
+
+  NOTES_ASC
+
+  NOTES_DESC
+
+  UPDATED_AT_ASC
+
+  UPDATED_AT_DESC
+
+  PRIMARY_KEY_ASC
+
+  PRIMARY_KEY_DESC
+}
+
+"""
+A condition to be used against `Orientation` object types. All fields are tested
+for equality and combined with a logical ‘and.’
+"""
+input OrientationCondition {
+  """
+  Checks for equality with the object’s `id` field.
+  """
+  id: UUID
+
+  """
+  Checks for equality with the object’s `notes` field.
+  """
+  notes: [String]
+
+  """
+  Checks for equality with the object’s `updatedAt` field.
+  """
+  updatedAt: Datetime
+}
+
+"""
+A filter to be used against `Orientation` object types. All fields are combined with a logical ‘and.’
+"""
+input OrientationFilter {
+  """
+  Filter by the object’s `id` field.
+  """
+  id: UUIDFilter
+
+  """
+  Filter by the object’s `notes` field.
+  """
+  notes: StringListFilter
+
+  """
+  Filter by the object’s `updatedAt` field.
+  """
+  updatedAt: DatetimeFilter
+
+  """
+  Checks for all expressions in this list.
+  """
+  and: [OrientationFilter!]
+
+  """
+  Checks for any expressions in this list.
+  """
+  or: [OrientationFilter!]
+
+  """
+  Negates the expression.
+  """
+  not: OrientationFilter
 }
 
 """
@@ -3476,6 +4637,138 @@ type AntecedentsMedicoChirugicauxesEdge {
 }
 
 """
+A connection to a list of `EcoleNiveau` values.
+"""
+type EcoleNiveausConnection {
+  """
+  A list of `EcoleNiveau` objects.
+  """
+  nodes: [EcoleNiveau]!
+
+  """
+  A list of edges which contains the `EcoleNiveau` and cursor to aid in pagination.
+  """
+  edges: [EcoleNiveausEdge!]!
+
+  """
+  Information to aid in pagination.
+  """
+  pageInfo: PageInfo!
+
+  """
+  The count of *all* `EcoleNiveau` you could get from the connection.
+  """
+  totalCount: Int!
+}
+
+type EcoleNiveau implements Node {
+  """
+  A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  """
+  nodeId: ID!
+
+  niveau: Int!
+
+  totalGroupes: Int!
+
+  updatedAt: Datetime!
+}
+
+"""
+A `EcoleNiveau` edge in the connection.
+"""
+type EcoleNiveausEdge {
+  """
+  A cursor for use in pagination.
+  """
+  cursor: Cursor
+
+  """
+  The `EcoleNiveau` at the end of the edge.
+  """
+  node: EcoleNiveau
+}
+
+"""
+Methods to use when ordering `EcoleNiveau`.
+"""
+enum EcoleNiveausOrderBy {
+  NATURAL
+
+  NIVEAU_ASC
+
+  NIVEAU_DESC
+
+  TOTAL_GROUPES_ASC
+
+  TOTAL_GROUPES_DESC
+
+  UPDATED_AT_ASC
+
+  UPDATED_AT_DESC
+
+  PRIMARY_KEY_ASC
+
+  PRIMARY_KEY_DESC
+}
+
+"""
+A condition to be used against `EcoleNiveau` object types. All fields are tested
+for equality and combined with a logical ‘and.’
+"""
+input EcoleNiveauCondition {
+  """
+  Checks for equality with the object’s `niveau` field.
+  """
+  niveau: Int
+
+  """
+  Checks for equality with the object’s `totalGroupes` field.
+  """
+  totalGroupes: Int
+
+  """
+  Checks for equality with the object’s `updatedAt` field.
+  """
+  updatedAt: Datetime
+}
+
+"""
+A filter to be used against `EcoleNiveau` object types. All fields are combined with a logical ‘and.’
+"""
+input EcoleNiveauFilter {
+  """
+  Filter by the object’s `niveau` field.
+  """
+  niveau: IntFilter
+
+  """
+  Filter by the object’s `totalGroupes` field.
+  """
+  totalGroupes: IntFilter
+
+  """
+  Filter by the object’s `updatedAt` field.
+  """
+  updatedAt: DatetimeFilter
+
+  """
+  Checks for all expressions in this list.
+  """
+  and: [EcoleNiveauFilter!]
+
+  """
+  Checks for any expressions in this list.
+  """
+  or: [EcoleNiveauFilter!]
+
+  """
+  Negates the expression.
+  """
+  not: EcoleNiveauFilter
+}
+
+"""
 A connection to a list of `UserAccount` values.
 """
 type UserAccountsConnection {
@@ -3556,6 +4849,10 @@ enum UserAccountsOrderBy {
   NIVEAU_ASC
 
   NIVEAU_DESC
+
+  GROUPE_ASC
+
+  GROUPE_DESC
 
   SPECIALITE_ASC
 
@@ -3641,6 +4938,11 @@ input UserAccountCondition {
   niveau: Int
 
   """
+  Checks for equality with the object’s `groupe` field.
+  """
+  groupe: Int
+
+  """
   Checks for equality with the object’s `specialite` field.
   """
   specialite: Specialite
@@ -3724,6 +5026,11 @@ input UserAccountFilter {
   Filter by the object’s `niveau` field.
   """
   niveau: IntFilter
+
+  """
+  Filter by the object’s `groupe` field.
+  """
+  groupe: IntFilter
 
   """
   Filter by the object’s `specialite` field.
@@ -4212,9 +5519,11 @@ type RecentExamenMedicalsRecord {
 
   profilePicture: String
 
+  userId: UUID
+
   role: Role
 
-  id: UUID
+  examenId: UUID
 
   lastEdit: String
 }
@@ -4254,14 +5563,19 @@ input RecentExamenMedicalsRecordFilter {
   profilePicture: StringFilter
 
   """
+  Filter by the object’s `userId` field.
+  """
+  userId: UUIDFilter
+
+  """
   Filter by the object’s `role` field.
   """
   role: RoleFilter
 
   """
-  Filter by the object’s `id` field.
+  Filter by the object’s `examenId` field.
   """
-  id: UUIDFilter
+  examenId: UUIDFilter
 
   """
   Filter by the object’s `lastEdit` field.
@@ -4419,6 +5733,11 @@ The root mutation type which contains root level fields which mutate data.
 """
 type Mutation {
   """
+  Creates a single `EcoleNiveau`.
+  """
+  createEcoleNiveau("The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields." input: CreateEcoleNiveauInput!): CreateEcoleNiveauPayload
+
+  """
   Creates a single `ExamenMedical`.
   """
   createExamenMedical("The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields." input: CreateExamenMedicalInput!): CreateExamenMedicalPayload
@@ -4479,6 +5798,26 @@ type Mutation {
   updateDigestifById("The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields." input: UpdateDigestifByIdInput!): UpdateDigestifPayload
 
   """
+  Updates a single `EcoleNiveau` using its globally unique id and a patch.
+  """
+  updateEcoleNiveau("The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields." input: UpdateEcoleNiveauInput!): UpdateEcoleNiveauPayload
+
+  """
+  Updates a single `EcoleNiveau` using a unique key and a patch.
+  """
+  updateEcoleNiveauByNiveau("The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields." input: UpdateEcoleNiveauByNiveauInput!): UpdateEcoleNiveauPayload
+
+  """
+  Updates a single `Endocrinologie` using its globally unique id and a patch.
+  """
+  updateEndocrinologie("The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields." input: UpdateEndocrinologieInput!): UpdateEndocrinologiePayload
+
+  """
+  Updates a single `Endocrinologie` using a unique key and a patch.
+  """
+  updateEndocrinologieById("The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields." input: UpdateEndocrinologieByIdInput!): UpdateEndocrinologiePayload
+
+  """
   Updates a single `ExamenMedical` using its globally unique id and a patch.
   """
   updateExamenMedical("The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields." input: UpdateExamenMedicalInput!): UpdateExamenMedicalPayload
@@ -4487,6 +5826,16 @@ type Mutation {
   Updates a single `ExamenMedical` using a unique key and a patch.
   """
   updateExamenMedicalById("The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields." input: UpdateExamenMedicalByIdInput!): UpdateExamenMedicalPayload
+
+  """
+  Updates a single `ExamensComplementaire` using its globally unique id and a patch.
+  """
+  updateExamensComplementaire("The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields." input: UpdateExamensComplementaireInput!): UpdateExamensComplementairePayload
+
+  """
+  Updates a single `ExamensComplementaire` using a unique key and a patch.
+  """
+  updateExamensComplementaireById("The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields." input: UpdateExamensComplementaireByIdInput!): UpdateExamensComplementairePayload
 
   """
   Updates a single `GenitoUrinaire` using its globally unique id and a patch.
@@ -4499,6 +5848,16 @@ type Mutation {
   updateGenitoUrinaireById("The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields." input: UpdateGenitoUrinaireByIdInput!): UpdateGenitoUrinairePayload
 
   """
+  Updates a single `HematologieAnglionnaire` using its globally unique id and a patch.
+  """
+  updateHematologieAnglionnaire("The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields." input: UpdateHematologieAnglionnaireInput!): UpdateHematologieAnglionnairePayload
+
+  """
+  Updates a single `HematologieAnglionnaire` using a unique key and a patch.
+  """
+  updateHematologieAnglionnaireById("The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields." input: UpdateHematologieAnglionnaireByIdInput!): UpdateHematologieAnglionnairePayload
+
+  """
   Updates a single `Locomoteur` using its globally unique id and a patch.
   """
   updateLocomoteur("The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields." input: UpdateLocomoteurInput!): UpdateLocomoteurPayload
@@ -4509,6 +5868,16 @@ type Mutation {
   updateLocomoteurById("The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields." input: UpdateLocomoteurByIdInput!): UpdateLocomoteurPayload
 
   """
+  Updates a single `NeurologiquePsychisme` using its globally unique id and a patch.
+  """
+  updateNeurologiquePsychisme("The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields." input: UpdateNeurologiquePsychismeInput!): UpdateNeurologiquePsychismePayload
+
+  """
+  Updates a single `NeurologiquePsychisme` using a unique key and a patch.
+  """
+  updateNeurologiquePsychismeById("The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields." input: UpdateNeurologiquePsychismeByIdInput!): UpdateNeurologiquePsychismePayload
+
+  """
   Updates a single `Ophtalmologique` using its globally unique id and a patch.
   """
   updateOphtalmologique("The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields." input: UpdateOphtalmologiqueInput!): UpdateOphtalmologiquePayload
@@ -4517,6 +5886,16 @@ type Mutation {
   Updates a single `Ophtalmologique` using a unique key and a patch.
   """
   updateOphtalmologiqueById("The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields." input: UpdateOphtalmologiqueByIdInput!): UpdateOphtalmologiquePayload
+
+  """
+  Updates a single `Orientation` using its globally unique id and a patch.
+  """
+  updateOrientation("The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields." input: UpdateOrientationInput!): UpdateOrientationPayload
+
+  """
+  Updates a single `Orientation` using a unique key and a patch.
+  """
+  updateOrientationById("The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields." input: UpdateOrientationByIdInput!): UpdateOrientationPayload
 
   """
   Updates a single `Orl` using its globally unique id and a patch.
@@ -4537,6 +5916,26 @@ type Mutation {
   Updates a single `PeauEtMuqueus` using a unique key and a patch.
   """
   updatePeauEtMuqueusById("The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields." input: UpdatePeauEtMuqueusByIdInput!): UpdatePeauEtMuqueusPayload
+
+  """
+  Updates a single `ProfilePsychologique` using its globally unique id and a patch.
+  """
+  updateProfilePsychologique("The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields." input: UpdateProfilePsychologiqueInput!): UpdateProfilePsychologiquePayload
+
+  """
+  Updates a single `ProfilePsychologique` using a unique key and a patch.
+  """
+  updateProfilePsychologiqueById("The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields." input: UpdateProfilePsychologiqueByIdInput!): UpdateProfilePsychologiquePayload
+
+  """
+  Updates a single `RapportMedical` using its globally unique id and a patch.
+  """
+  updateRapportMedical("The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields." input: UpdateRapportMedicalInput!): UpdateRapportMedicalPayload
+
+  """
+  Updates a single `RapportMedical` using a unique key and a patch.
+  """
+  updateRapportMedicalById("The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields." input: UpdateRapportMedicalByIdInput!): UpdateRapportMedicalPayload
 
   """
   Updates a single `RendezVous` using its globally unique id and a patch.
@@ -4574,6 +5973,16 @@ type Mutation {
   updateUserAccountByEmail("The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields." input: UpdateUserAccountByEmailInput!): UpdateUserAccountPayload
 
   """
+  Deletes a single `EcoleNiveau` using its globally unique id.
+  """
+  deleteEcoleNiveau("The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields." input: DeleteEcoleNiveauInput!): DeleteEcoleNiveauPayload
+
+  """
+  Deletes a single `EcoleNiveau` using a unique key.
+  """
+  deleteEcoleNiveauByNiveau("The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields." input: DeleteEcoleNiveauByNiveauInput!): DeleteEcoleNiveauPayload
+
+  """
   Deletes a single `RendezVous` using its globally unique id.
   """
   deleteRendezVous("The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields." input: DeleteRendezVousInput!): DeleteRendezVousPayload
@@ -4588,6 +5997,57 @@ type Mutation {
   createMedecin("The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields." input: CreateMedecinInput!): CreateMedecinPayload
 
   createPatient("The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields." input: CreatePatientInput!): CreatePatientPayload
+}
+
+"""
+The output of our create `EcoleNiveau` mutation.
+"""
+type CreateEcoleNiveauPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """
+  The `EcoleNiveau` that was created by this mutation.
+  """
+  ecoleNiveau: EcoleNiveau
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """
+  An edge for our `EcoleNiveau`. May be used by Relay 1.
+  """
+  ecoleNiveauEdge("The method to use when ordering `EcoleNiveau`." orderBy: [EcoleNiveausOrderBy!] = [PRIMARY_KEY_ASC]): EcoleNiveausEdge
+}
+
+"""
+All input for the create `EcoleNiveau` mutation.
+"""
+input CreateEcoleNiveauInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  The `EcoleNiveau` to be created by this mutation.
+  """
+  ecoleNiveau: EcoleNiveauInput!
+}
+
+"""
+An input for mutations affecting `EcoleNiveau`
+"""
+input EcoleNiveauInput {
+  niveau: Int!
+
+  totalGroupes: Int!
 }
 
 """
@@ -4641,6 +6101,8 @@ input CreateExamenMedicalInput {
 An input for mutations affecting `ExamenMedical`
 """
 input ExamenMedicalInput {
+  id: UUID
+
   dossierMedicalId: UUID
 }
 
@@ -4709,6 +6171,10 @@ input RendezVousInput {
   startDate: Datetime!
 
   endDate: Datetime!
+
+  description: String
+
+  isValid: Boolean
 
   updatedAt: Datetime
 }
@@ -5048,7 +6514,7 @@ input UpdateCardioVasculaireInput {
 Represents an update to a `CardioVasculaire`. Fields that are set will be updated.
 """
 input CardioVasculairePatch {
-  affectionsCutanees: String
+  notes: [String]
 
   updatedAt: Datetime
 }
@@ -5127,7 +6593,7 @@ input UpdateDigestifInput {
 Represents an update to a `Digestif`. Fields that are set will be updated.
 """
 input DigestifPatch {
-  affectionsCutanees: String
+  notes: [String]
 
   updatedAt: Datetime
 }
@@ -5146,6 +6612,159 @@ input UpdateDigestifByIdInput {
   An object where the defined keys will be set on the `Digestif` being updated.
   """
   digestifPatch: DigestifPatch!
+
+  id: UUID!
+}
+
+"""
+The output of our update `EcoleNiveau` mutation.
+"""
+type UpdateEcoleNiveauPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """
+  The `EcoleNiveau` that was updated by this mutation.
+  """
+  ecoleNiveau: EcoleNiveau
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """
+  An edge for our `EcoleNiveau`. May be used by Relay 1.
+  """
+  ecoleNiveauEdge("The method to use when ordering `EcoleNiveau`." orderBy: [EcoleNiveausOrderBy!] = [PRIMARY_KEY_ASC]): EcoleNiveausEdge
+}
+
+"""
+All input for the `updateEcoleNiveau` mutation.
+"""
+input UpdateEcoleNiveauInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  The globally unique `ID` which will identify a single `EcoleNiveau` to be updated.
+  """
+  nodeId: ID!
+
+  """
+  An object where the defined keys will be set on the `EcoleNiveau` being updated.
+  """
+  ecoleNiveauPatch: EcoleNiveauPatch!
+}
+
+"""
+Represents an update to a `EcoleNiveau`. Fields that are set will be updated.
+"""
+input EcoleNiveauPatch {
+  niveau: Int
+
+  totalGroupes: Int
+}
+
+"""
+All input for the `updateEcoleNiveauByNiveau` mutation.
+"""
+input UpdateEcoleNiveauByNiveauInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  An object where the defined keys will be set on the `EcoleNiveau` being updated.
+  """
+  ecoleNiveauPatch: EcoleNiveauPatch!
+
+  niveau: Int!
+}
+
+"""
+The output of our update `Endocrinologie` mutation.
+"""
+type UpdateEndocrinologiePayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """
+  The `Endocrinologie` that was updated by this mutation.
+  """
+  endocrinologie: Endocrinologie
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """
+  Reads a single `ExamenMedical` that is related to this `Endocrinologie`.
+  """
+  examenMedicalById: ExamenMedical
+
+  """
+  An edge for our `Endocrinologie`. May be used by Relay 1.
+  """
+  endocrinologieEdge("The method to use when ordering `Endocrinologie`." orderBy: [EndocrinologiesOrderBy!] = [PRIMARY_KEY_ASC]): EndocrinologiesEdge
+}
+
+"""
+All input for the `updateEndocrinologie` mutation.
+"""
+input UpdateEndocrinologieInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  The globally unique `ID` which will identify a single `Endocrinologie` to be updated.
+  """
+  nodeId: ID!
+
+  """
+  An object where the defined keys will be set on the `Endocrinologie` being updated.
+  """
+  endocrinologiePatch: EndocrinologiePatch!
+}
+
+"""
+Represents an update to a `Endocrinologie`. Fields that are set will be updated.
+"""
+input EndocrinologiePatch {
+  notes: [String]
+
+  updatedAt: Datetime
+}
+
+"""
+All input for the `updateEndocrinologieById` mutation.
+"""
+input UpdateEndocrinologieByIdInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  An object where the defined keys will be set on the `Endocrinologie` being updated.
+  """
+  endocrinologiePatch: EndocrinologiePatch!
 
   id: UUID!
 }
@@ -5206,6 +6825,8 @@ input UpdateExamenMedicalInput {
 Represents an update to a `ExamenMedical`. Fields that are set will be updated.
 """
 input ExamenMedicalPatch {
+  id: UUID
+
   dossierMedicalId: UUID
 }
 
@@ -5223,6 +6844,85 @@ input UpdateExamenMedicalByIdInput {
   An object where the defined keys will be set on the `ExamenMedical` being updated.
   """
   examenMedicalPatch: ExamenMedicalPatch!
+
+  id: UUID!
+}
+
+"""
+The output of our update `ExamensComplementaire` mutation.
+"""
+type UpdateExamensComplementairePayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """
+  The `ExamensComplementaire` that was updated by this mutation.
+  """
+  examensComplementaire: ExamensComplementaire
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """
+  Reads a single `ExamenMedical` that is related to this `ExamensComplementaire`.
+  """
+  examenMedicalById: ExamenMedical
+
+  """
+  An edge for our `ExamensComplementaire`. May be used by Relay 1.
+  """
+  examensComplementaireEdge("The method to use when ordering `ExamensComplementaire`." orderBy: [ExamensComplementairesOrderBy!] = [PRIMARY_KEY_ASC]): ExamensComplementairesEdge
+}
+
+"""
+All input for the `updateExamensComplementaire` mutation.
+"""
+input UpdateExamensComplementaireInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  The globally unique `ID` which will identify a single `ExamensComplementaire` to be updated.
+  """
+  nodeId: ID!
+
+  """
+  An object where the defined keys will be set on the `ExamensComplementaire` being updated.
+  """
+  examensComplementairePatch: ExamensComplementairePatch!
+}
+
+"""
+Represents an update to a `ExamensComplementaire`. Fields that are set will be updated.
+"""
+input ExamensComplementairePatch {
+  notes: [String]
+
+  updatedAt: Datetime
+}
+
+"""
+All input for the `updateExamensComplementaireById` mutation.
+"""
+input UpdateExamensComplementaireByIdInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  An object where the defined keys will be set on the `ExamensComplementaire` being updated.
+  """
+  examensComplementairePatch: ExamensComplementairePatch!
 
   id: UUID!
 }
@@ -5283,7 +6983,7 @@ input UpdateGenitoUrinaireInput {
 Represents an update to a `GenitoUrinaire`. Fields that are set will be updated.
 """
 input GenitoUrinairePatch {
-  affectionsCutanees: String
+  notes: [String]
 
   updatedAt: Datetime
 }
@@ -5302,6 +7002,85 @@ input UpdateGenitoUrinaireByIdInput {
   An object where the defined keys will be set on the `GenitoUrinaire` being updated.
   """
   genitoUrinairePatch: GenitoUrinairePatch!
+
+  id: UUID!
+}
+
+"""
+The output of our update `HematologieAnglionnaire` mutation.
+"""
+type UpdateHematologieAnglionnairePayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """
+  The `HematologieAnglionnaire` that was updated by this mutation.
+  """
+  hematologieAnglionnaire: HematologieAnglionnaire
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """
+  Reads a single `ExamenMedical` that is related to this `HematologieAnglionnaire`.
+  """
+  examenMedicalById: ExamenMedical
+
+  """
+  An edge for our `HematologieAnglionnaire`. May be used by Relay 1.
+  """
+  hematologieAnglionnaireEdge("The method to use when ordering `HematologieAnglionnaire`." orderBy: [HematologieAnglionnairesOrderBy!] = [PRIMARY_KEY_ASC]): HematologieAnglionnairesEdge
+}
+
+"""
+All input for the `updateHematologieAnglionnaire` mutation.
+"""
+input UpdateHematologieAnglionnaireInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  The globally unique `ID` which will identify a single `HematologieAnglionnaire` to be updated.
+  """
+  nodeId: ID!
+
+  """
+  An object where the defined keys will be set on the `HematologieAnglionnaire` being updated.
+  """
+  hematologieAnglionnairePatch: HematologieAnglionnairePatch!
+}
+
+"""
+Represents an update to a `HematologieAnglionnaire`. Fields that are set will be updated.
+"""
+input HematologieAnglionnairePatch {
+  notes: [String]
+
+  updatedAt: Datetime
+}
+
+"""
+All input for the `updateHematologieAnglionnaireById` mutation.
+"""
+input UpdateHematologieAnglionnaireByIdInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  An object where the defined keys will be set on the `HematologieAnglionnaire` being updated.
+  """
+  hematologieAnglionnairePatch: HematologieAnglionnairePatch!
 
   id: UUID!
 }
@@ -5362,7 +7141,7 @@ input UpdateLocomoteurInput {
 Represents an update to a `Locomoteur`. Fields that are set will be updated.
 """
 input LocomoteurPatch {
-  affectionsCutanees: String
+  notes: [String]
 
   updatedAt: Datetime
 }
@@ -5381,6 +7160,85 @@ input UpdateLocomoteurByIdInput {
   An object where the defined keys will be set on the `Locomoteur` being updated.
   """
   locomoteurPatch: LocomoteurPatch!
+
+  id: UUID!
+}
+
+"""
+The output of our update `NeurologiquePsychisme` mutation.
+"""
+type UpdateNeurologiquePsychismePayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """
+  The `NeurologiquePsychisme` that was updated by this mutation.
+  """
+  neurologiquePsychisme: NeurologiquePsychisme
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """
+  Reads a single `ExamenMedical` that is related to this `NeurologiquePsychisme`.
+  """
+  examenMedicalById: ExamenMedical
+
+  """
+  An edge for our `NeurologiquePsychisme`. May be used by Relay 1.
+  """
+  neurologiquePsychismeEdge("The method to use when ordering `NeurologiquePsychisme`." orderBy: [NeurologiquePsychismesOrderBy!] = [PRIMARY_KEY_ASC]): NeurologiquePsychismesEdge
+}
+
+"""
+All input for the `updateNeurologiquePsychisme` mutation.
+"""
+input UpdateNeurologiquePsychismeInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  The globally unique `ID` which will identify a single `NeurologiquePsychisme` to be updated.
+  """
+  nodeId: ID!
+
+  """
+  An object where the defined keys will be set on the `NeurologiquePsychisme` being updated.
+  """
+  neurologiquePsychismePatch: NeurologiquePsychismePatch!
+}
+
+"""
+Represents an update to a `NeurologiquePsychisme`. Fields that are set will be updated.
+"""
+input NeurologiquePsychismePatch {
+  notes: [String]
+
+  updatedAt: Datetime
+}
+
+"""
+All input for the `updateNeurologiquePsychismeById` mutation.
+"""
+input UpdateNeurologiquePsychismeByIdInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  An object where the defined keys will be set on the `NeurologiquePsychisme` being updated.
+  """
+  neurologiquePsychismePatch: NeurologiquePsychismePatch!
 
   id: UUID!
 }
@@ -5466,6 +7324,85 @@ input UpdateOphtalmologiqueByIdInput {
   An object where the defined keys will be set on the `Ophtalmologique` being updated.
   """
   ophtalmologiquePatch: OphtalmologiquePatch!
+
+  id: UUID!
+}
+
+"""
+The output of our update `Orientation` mutation.
+"""
+type UpdateOrientationPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """
+  The `Orientation` that was updated by this mutation.
+  """
+  orientation: Orientation
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """
+  Reads a single `ExamenMedical` that is related to this `Orientation`.
+  """
+  examenMedicalById: ExamenMedical
+
+  """
+  An edge for our `Orientation`. May be used by Relay 1.
+  """
+  orientationEdge("The method to use when ordering `Orientation`." orderBy: [OrientationsOrderBy!] = [PRIMARY_KEY_ASC]): OrientationsEdge
+}
+
+"""
+All input for the `updateOrientation` mutation.
+"""
+input UpdateOrientationInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  The globally unique `ID` which will identify a single `Orientation` to be updated.
+  """
+  nodeId: ID!
+
+  """
+  An object where the defined keys will be set on the `Orientation` being updated.
+  """
+  orientationPatch: OrientationPatch!
+}
+
+"""
+Represents an update to a `Orientation`. Fields that are set will be updated.
+"""
+input OrientationPatch {
+  notes: [String]
+
+  updatedAt: Datetime
+}
+
+"""
+All input for the `updateOrientationById` mutation.
+"""
+input UpdateOrientationByIdInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  An object where the defined keys will be set on the `Orientation` being updated.
+  """
+  orientationPatch: OrientationPatch!
 
   id: UUID!
 }
@@ -5639,6 +7576,164 @@ input UpdatePeauEtMuqueusByIdInput {
 }
 
 """
+The output of our update `ProfilePsychologique` mutation.
+"""
+type UpdateProfilePsychologiquePayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """
+  The `ProfilePsychologique` that was updated by this mutation.
+  """
+  profilePsychologique: ProfilePsychologique
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """
+  Reads a single `ExamenMedical` that is related to this `ProfilePsychologique`.
+  """
+  examenMedicalById: ExamenMedical
+
+  """
+  An edge for our `ProfilePsychologique`. May be used by Relay 1.
+  """
+  profilePsychologiqueEdge("The method to use when ordering `ProfilePsychologique`." orderBy: [ProfilePsychologiquesOrderBy!] = [PRIMARY_KEY_ASC]): ProfilePsychologiquesEdge
+}
+
+"""
+All input for the `updateProfilePsychologique` mutation.
+"""
+input UpdateProfilePsychologiqueInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  The globally unique `ID` which will identify a single `ProfilePsychologique` to be updated.
+  """
+  nodeId: ID!
+
+  """
+  An object where the defined keys will be set on the `ProfilePsychologique` being updated.
+  """
+  profilePsychologiquePatch: ProfilePsychologiquePatch!
+}
+
+"""
+Represents an update to a `ProfilePsychologique`. Fields that are set will be updated.
+"""
+input ProfilePsychologiquePatch {
+  notes: [String]
+
+  updatedAt: Datetime
+}
+
+"""
+All input for the `updateProfilePsychologiqueById` mutation.
+"""
+input UpdateProfilePsychologiqueByIdInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  An object where the defined keys will be set on the `ProfilePsychologique` being updated.
+  """
+  profilePsychologiquePatch: ProfilePsychologiquePatch!
+
+  id: UUID!
+}
+
+"""
+The output of our update `RapportMedical` mutation.
+"""
+type UpdateRapportMedicalPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """
+  The `RapportMedical` that was updated by this mutation.
+  """
+  rapportMedical: RapportMedical
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """
+  Reads a single `ExamenMedical` that is related to this `RapportMedical`.
+  """
+  examenMedicalById: ExamenMedical
+
+  """
+  An edge for our `RapportMedical`. May be used by Relay 1.
+  """
+  rapportMedicalEdge("The method to use when ordering `RapportMedical`." orderBy: [RapportMedicalsOrderBy!] = [PRIMARY_KEY_ASC]): RapportMedicalsEdge
+}
+
+"""
+All input for the `updateRapportMedical` mutation.
+"""
+input UpdateRapportMedicalInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  The globally unique `ID` which will identify a single `RapportMedical` to be updated.
+  """
+  nodeId: ID!
+
+  """
+  An object where the defined keys will be set on the `RapportMedical` being updated.
+  """
+  rapportMedicalPatch: RapportMedicalPatch!
+}
+
+"""
+Represents an update to a `RapportMedical`. Fields that are set will be updated.
+"""
+input RapportMedicalPatch {
+  notes: [String]
+
+  updatedAt: Datetime
+}
+
+"""
+All input for the `updateRapportMedicalById` mutation.
+"""
+input UpdateRapportMedicalByIdInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  An object where the defined keys will be set on the `RapportMedical` being updated.
+  """
+  rapportMedicalPatch: RapportMedicalPatch!
+
+  id: UUID!
+}
+
+"""
 The output of our update `RendezVous` mutation.
 """
 type UpdateRendezVousPayload {
@@ -5708,6 +7803,10 @@ input RendezVousPatch {
   startDate: Datetime
 
   endDate: Datetime
+
+  description: String
+
+  isValid: Boolean
 
   updatedAt: Datetime
 }
@@ -5874,6 +7973,8 @@ input UserAccountPatch {
 
   niveau: Int
 
+  groupe: Int
+
   specialite: Specialite
 
   adresse: String
@@ -5921,6 +8022,63 @@ input UpdateUserAccountByEmailInput {
   userAccountPatch: UserAccountPatch!
 
   email: String!
+}
+
+"""
+The output of our delete `EcoleNiveau` mutation.
+"""
+type DeleteEcoleNiveauPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """
+  The `EcoleNiveau` that was deleted by this mutation.
+  """
+  ecoleNiveau: EcoleNiveau
+
+  deletedEcoleNiveauId: ID
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """
+  An edge for our `EcoleNiveau`. May be used by Relay 1.
+  """
+  ecoleNiveauEdge("The method to use when ordering `EcoleNiveau`." orderBy: [EcoleNiveausOrderBy!] = [PRIMARY_KEY_ASC]): EcoleNiveausEdge
+}
+
+"""
+All input for the `deleteEcoleNiveau` mutation.
+"""
+input DeleteEcoleNiveauInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  """
+  The globally unique `ID` which will identify a single `EcoleNiveau` to be deleted.
+  """
+  nodeId: ID!
+}
+
+"""
+All input for the `deleteEcoleNiveauByNiveau` mutation.
+"""
+input DeleteEcoleNiveauByNiveauInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+
+  niveau: Int!
 }
 
 """

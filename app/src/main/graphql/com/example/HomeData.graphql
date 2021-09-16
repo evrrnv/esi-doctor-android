@@ -17,7 +17,7 @@ query HomeData {
             }
         }
     }
-    allRendezVous(orderBy: [UPDATED_AT_DESC]) {
+    allRendezVous(orderBy: [UPDATED_AT_DESC], condition: {isValid: true}) {
         nodes {
             startDate
         }
